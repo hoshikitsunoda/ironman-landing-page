@@ -29,7 +29,7 @@ class App extends Component {
       })
       const { data } = await res
       this.setState({
-        characterData: data.data.results
+        characterData: data.data.results[0]
       })
       console.log(this.state.characterData)
     } catch (err) {
