@@ -9,7 +9,6 @@ class Hero extends Component {
   state = { isDesktop: false }
 
   render() {
-    console.log(this.props.characterData.description)
     return (
       <HeroWrapper className="hero-wrapper">
         <HeroContainer className="hero-container">
@@ -68,6 +67,7 @@ const ContentWrapper = styled.div`
       font-size: 1rem;
       border: none;
       box-shadow: 0 2px 5px -2px #fff;
+      cursor: pointer;
     }
   }
 
@@ -108,7 +108,6 @@ const ContentWrapper = styled.div`
             #f4bc00 1%,
             #cc3332 79%
           );
-          border-radius: 5px;
         }
       }
     }
