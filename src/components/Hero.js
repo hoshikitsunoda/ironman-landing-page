@@ -17,6 +17,7 @@ class Hero extends Component {
           <ContentWrapper>
             <div className="left">
               <p>{this.props.characterData.description}</p>
+              <button>Get Started</button>
             </div>
             <div className="right">
               <img src={ironManCartoon} alt="" />
@@ -32,10 +33,11 @@ const HeroWrapper = styled.div`
   background-image: url(${heroBackGround});
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: top right;
 `
 
 const HeroContainer = styled.div`
-  padding: 0 1.2rem;
+  padding: 0 1.2rem 4rem;
 `
 
 const ContentWrapper = styled.div`
@@ -49,6 +51,17 @@ const ContentWrapper = styled.div`
     p {
       color: #fff;
       text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      display: block;
+      background-color: #f4bc00;
+      margin: 0 auto;
+      padding: 0.5rem 3.5rem;
+      color: #fff;
+      border-radius: 0.2rem;
+      font-size: 1rem;
     }
   }
 
