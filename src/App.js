@@ -4,6 +4,7 @@ import md5 from 'md5'
 import styled from 'styled-components'
 
 import Hero from './components/Hero'
+import Copy from './components/Copy'
 
 import * as Styled from './components/styled'
 
@@ -41,6 +42,7 @@ class App extends Component {
       <AppWrapper className="App">
         <Styled.GlobalStyle />
         <Hero characterData={this.state.characterData} />
+        <Copy characterData={this.state.characterData} />
       </AppWrapper>
     )
   }
