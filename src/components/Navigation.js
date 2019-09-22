@@ -69,6 +69,16 @@ const Button = styled(Link)`
   @media (min-width: 767px) {
     padding: 0.6rem 2rem;
     font-size: 1rem;
+
+    &:hover {
+      background-image: radial-gradient(
+        70% 120%,
+        #f4bc00 6%,
+        #f4bc00 1%,
+        #cc3332 79%
+      );
+      border-radius: 5px;
+    }
   }
 `
 
