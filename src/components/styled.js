@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Nunito|Ropa+Sans&display=swap');
 
   html {
-    background-color: #fffafa;
+    background-color: #ffffff;
   }
   
   html * {
