@@ -1,31 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Navigation from './Navigation'
 import styled from 'styled-components'
 
 import heroBackGround from '../images/background.png'
 import ironManCartoon from '../images/Iron-man-Cartoon.png'
 
-class Hero extends Component {
-  state = { isDesktop: false }
-
-  render() {
-    return (
-      <HeroWrapper className="hero-wrapper">
-        <HeroContainer className="hero-container">
-          <Navigation />
-          <ContentWrapper>
-            <div className="left">
-              <p>{this.props.characterData.description}</p>
-              <button>Get Started</button>
-            </div>
-            <div className="right">
-              <img src={ironManCartoon} alt="" />
-            </div>
-          </ContentWrapper>
-        </HeroContainer>
-      </HeroWrapper>
-    )
-  }
+const Hero = props => {
+  return (
+    <HeroWrapper className="hero-wrapper">
+      <HeroContainer className="hero-container">
+        <Navigation />
+        <ContentWrapper>
+          <div className="left">
+            <p>{props.characterData.description}</p>
+            <button>Get Started</button>
+          </div>
+          <div className="right">
+            <img src={ironManCartoon} alt="" />
+          </div>
+        </ContentWrapper>
+      </HeroContainer>
+    </HeroWrapper>
+  )
 }
 
 const HeroWrapper = styled.div`
