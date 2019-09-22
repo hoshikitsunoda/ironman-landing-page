@@ -3,7 +3,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Copy = props => {
-  const imgSrc = 'http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg'
+  const imgSrcPath =
+    props.characterData.thumbnail && props.characterData.thumbnail.path
+  const imgSrcExtension =
+    props.characterData.thumbnail && props.characterData.thumbnail.extension
+  const imgSrc = `${imgSrcPath}.${imgSrcExtension}`
   return (
     <CopyWrapper>
       <HeadingWrapper className="text-wrapper heading">
