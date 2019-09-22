@@ -24,6 +24,7 @@ const NavWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2.5rem 0;
 `
 
 const Button = styled(Link)`

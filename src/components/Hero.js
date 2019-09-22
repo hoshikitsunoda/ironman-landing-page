@@ -10,8 +10,8 @@ class Hero extends Component {
   render() {
     console.log(this.props.characterData)
     return (
-      <HeroWrapper>
-        <HeroContainer>
+      <HeroWrapper className="hero-wrapper">
+        <HeroContainer className="hero-container">
           <Navigation />
           <div>Hero Section</div>
         </HeroContainer>
