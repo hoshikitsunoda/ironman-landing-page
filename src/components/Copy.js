@@ -26,6 +26,8 @@ const Copy = props => {
 
 const CopyWrapper = styled.div`
   padding: 0 1.2rem;
+  max-width: 1440px;
+  margin: 0 auto;
 
   .thumbnail {
     width: 100%;

@@ -49,10 +49,14 @@ const LinkWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: calc(100% - 10.5rem);
+  width: calc(100% - 6.5rem);
 
   @media (min-width: 767px) {
     width: auto;
+  }
+
+  @media (min-width: 350px) {
+    width: calc(100% - 10.5rem);
   }
 `
 

@@ -37,6 +37,8 @@ const HeroWrapper = styled.div`
 
 const HeroContainer = styled.div`
   padding: 0 1.2rem 4rem;
+  max-width: 1440px;
+  margin: 0 auto;
 
   @media (min-width: 767px) {
     padding: 0 4rem 8rem;
