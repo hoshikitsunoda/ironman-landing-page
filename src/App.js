@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import axios from 'axios'
 import md5 from 'md5'
+import styled from 'styled-components'
 
 import Hero from './components/Hero'
 
@@ -38,12 +39,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <AppWrapper className="App">
         <Styled.GlobalStyle />
         <Hero characterData={this.state.characterData} />
-      </div>
+      </AppWrapper>
     )
   }
 }
+
+const AppWrapper = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+`
 
 export default App
