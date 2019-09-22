@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import Navigation from './Navigation'
 import styled from 'styled-components'
 
-import HeroBackGround from '../images/background.png'
+import heroBackGround from '../images/background.png'
+import ironManCartoon from '../images/Iron-man-Cartoon.png'
 
 class Hero extends Component {
   state = { isDesktop: false }
@@ -17,7 +18,9 @@ class Hero extends Component {
             <div className="left">
               <p>{this.props.characterData.description}</p>
             </div>
-            <div className="right"></div>
+            <div className="right">
+              <img src={ironManCartoon} alt="" />
+            </div>
           </ContentWrapper>
         </HeroContainer>
       </HeroWrapper>
@@ -26,7 +29,7 @@ class Hero extends Component {
 }
 
 const HeroWrapper = styled.div`
-  background-image: url(${HeroBackGround});
+  background-image: url(${heroBackGround});
   background-repeat: no-repeat;
   background-size: cover;
 `
@@ -37,12 +40,23 @@ const HeroContainer = styled.div`
 
 const ContentWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   .left {
+    order: 1;
     p {
       color: #fff;
+      text-align: center;
+    }
+  }
+
+  .right {
+    order: 0;
+    img {
+      max-width: 230px;
+      width: 100%;
     }
   }
 `
