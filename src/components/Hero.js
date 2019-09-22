@@ -38,6 +38,10 @@ const HeroWrapper = styled.div`
 
 const HeroContainer = styled.div`
   padding: 0 1.2rem 4rem;
+
+  @media (min-width: 767px) {
+    padding: 0 4rem 8rem;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -62,6 +66,8 @@ const ContentWrapper = styled.div`
       color: #fff;
       border-radius: 0.2rem;
       font-size: 1rem;
+      border: none;
+      box-shadow: 0 2px 5px -2px #fff;
     }
   }
 
@@ -70,6 +76,50 @@ const ContentWrapper = styled.div`
     img {
       max-width: 230px;
       width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 767px) {
+    flex-direction: row;
+    align-items: flex-start;
+
+    .left {
+      flex: 0 1 60%;
+      order: 0;
+      padding-top: 5rem;
+
+      p {
+        text-align: left;
+        font-size: 1.5rem;
+        margin-bottom: 6rem;
+      }
+
+      button {
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding: 1.2rem 6.5rem;
+
+        &:hover {
+          background-image: radial-gradient(
+            70% 120%,
+            #f4bc00 6%,
+            #f4bc00 1%,
+            #cc3332 79%
+          );
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .right {
+      flex: 0 1 50%;
+      order: 1;
+
+      img {
+        max-width: 410px;
+      }
     }
   }
 `

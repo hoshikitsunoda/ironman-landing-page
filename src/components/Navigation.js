@@ -25,6 +25,10 @@ const NavWrapper = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 1.5rem 0;
+
+  @media (min-width: 767px) {
+    padding: 2.5rem 0;
+  }
 `
 
 const LogoWrapper = styled.div`
@@ -33,6 +37,11 @@ const LogoWrapper = styled.div`
   svg {
     width: 100%;
     height: auto;
+    filter: brightness(0) saturate(100%) invert(1);
+  }
+
+  @media (min-width: 767px) {
+    width: auto;
   }
 `
 
@@ -41,6 +50,10 @@ const LinkWrapper = styled.div`
   justify-content: flex-end;
   align-items: center;
   width: calc(100% - 10.5rem);
+
+  @media (min-width: 767px) {
+    width: auto;
+  }
 `
 
 const Button = styled(Link)`
@@ -51,6 +64,12 @@ const Button = styled(Link)`
   padding: 0.2rem 0.7rem;
   font-size: 0.8rem;
   cursor: pointer;
+  box-shadow: 0 2px 5px -2px #fff;
+
+  @media (min-width: 767px) {
+    padding: 0.6rem 2rem;
+    font-size: 1rem;
+  }
 `
 
 const NavLink = styled(Link)`
@@ -59,6 +78,11 @@ const NavLink = styled(Link)`
   margin: 0.2rem 0.7rem;
   font-size: 0.8rem;
   cursor: pointer;
+
+  @media (min-width: 767px) {
+    margin: 0.6rem 2rem;
+    font-size: 1rem;
+  }
 `
 
 export default Navigation

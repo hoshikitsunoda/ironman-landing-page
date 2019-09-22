@@ -27,4 +27,8 @@ export const GlobalStyle = createGlobalStyle`
   h4 {
     font-family: 'Ropa Sans', sans-serif;
   }
+
+  img {
+    display: block;
+  }
 `
