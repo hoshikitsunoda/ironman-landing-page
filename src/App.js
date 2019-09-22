@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 import Hero from './components/Hero'
 import Copy from './components/Copy'
+import ComicSlider from './components/ComicSlider'
 
 import * as Styled from './components/styled'
 
@@ -43,6 +44,7 @@ class App extends Component {
         <Styled.GlobalStyle />
         <Hero characterData={this.state.characterData} />
         <Copy characterData={this.state.characterData} />
+        <ComicSlider />
       </AppWrapper>
     )
   }
