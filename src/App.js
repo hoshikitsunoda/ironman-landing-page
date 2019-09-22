@@ -11,7 +11,7 @@ const characterCode = '1009368'
 const url = `https://gateway.marvel.com:443/v1/public/characters/${characterCode}`
 
 class App extends Component {
-  state = {}
+  state = { characterData: [] }
 
   async componentDidMount() {
     let publicKey = process.env.REACT_APP_MARVEL_PUBLIC_API_KEY
@@ -27,7 +27,10 @@ class App extends Component {
         }
       })
       const { data } = await res
-      console.log(data)
+      this.setState({
+        characterData: data.data.results
+      })
+      console.log(this.state.characterData)
     } catch (err) {
       console.error(err)
     }
@@ -37,7 +40,7 @@ class App extends Component {
     return (
       <div className="App">
         <Styled.GlobalStyle />
-        <Hero />
+        <Hero characterData={this.state.characterData} />
       </div>
     )
   }
