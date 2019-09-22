@@ -55,7 +55,7 @@ class App extends Component {
         <Styled.GlobalStyle />
         <Hero characterData={this.state.characterData} />
         <Copy characterData={this.state.characterData} />
-        <ComicSlider />
+        <ComicSlider comicsData={this.state.comicsData} />
       </AppWrapper>
     )
   }
