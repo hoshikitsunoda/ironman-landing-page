@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Navigation from './Navigation'
 import styled from 'styled-components'
 
+import HeroBackGround from '../images/background.png'
+
 class Hero extends Component {
   state = { isDesktop: false }
 
@@ -19,13 +21,9 @@ class Hero extends Component {
 }
 
 const HeroWrapper = styled.div`
-  background-image: linear-gradient(
-    154deg,
-    #cc3332 16%,
-    #ea8d33 56%,
-    #ffcc33 100%,
-    #bdbafa 100%
-  );
+  background-image: url(${HeroBackGround});
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 
 const HeroContainer = styled.div`
