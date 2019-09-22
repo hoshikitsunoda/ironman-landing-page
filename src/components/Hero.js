@@ -9,7 +9,6 @@ class Hero extends Component {
   state = { isDesktop: false }
 
   render() {
-    console.log(this.props.characterData.description)
     return (
       <HeroWrapper className="hero-wrapper">
         <HeroContainer className="hero-container">
