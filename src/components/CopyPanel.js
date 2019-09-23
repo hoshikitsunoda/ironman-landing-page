@@ -36,7 +36,7 @@ const panelData = {
 
 const CopyPanel = () => {
   return (
-    <PanelWrapper>
+    <PanelWrapper className="copy-panel">
       {Object.keys(panelData).map((key, i) => (
         <PanelContainer key={i}>
           <img src={panelData[key].icon} alt="" />

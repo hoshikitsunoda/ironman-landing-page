@@ -10,8 +10,8 @@ console.log(Styled.Device.mobile)
 const Navigation = () => {
   return (
     <NavWrapper className="nav-wrapper">
-      <LogoWrapper className="logo">
-        <Logo />
+      <LogoWrapper className="logo-wrapper">
+        <Logo className="logo-image" />
       </LogoWrapper>
       <LinkWrapper className="linkWrapper">
         <Router>

@@ -10,15 +10,15 @@ const Copy = props => {
     props.characterData.thumbnail && props.characterData.thumbnail.extension
   const imgSrc = `${imgSrcPath}.${imgSrcExtension}`
   return (
-    <CopyWrapper>
+    <CopyWrapper className="copy-wrapper">
       <HeadingWrapper className="text-wrapper heading">
         <p>Contrary to popular belief, he knows exactly what he’s doing.</p>
       </HeadingWrapper>
-      <CopyContentWrapper>
-        <ImageWrapper>
+      <CopyContentWrapper className="copy-content-wrapper">
+        <ImageWrapper className="image-wrapper">
           <img src={imgSrc} alt="thumbnail" className="thumbnail" />
         </ImageWrapper>
-        <CopyPanel />
+        <CopyPanel className="copy-panels" />
       </CopyContentWrapper>
     </CopyWrapper>
   )

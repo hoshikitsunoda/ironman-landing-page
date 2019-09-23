@@ -9,8 +9,8 @@ const Hero = props => {
   return (
     <HeroWrapper className="hero-wrapper">
       <HeroContainer className="hero-container">
-        <Navigation />
-        <ContentWrapper>
+        <Navigation className="navigation" />
+        <ContentWrapper className="hero-content-wrapper">
           <div className="left">
             <p>{props.characterData.description}</p>
             <button>Get Started</button>
