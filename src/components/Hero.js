@@ -85,7 +85,7 @@ const ContentWrapper = styled.div`
     .left {
       flex: 0 1 60%;
       order: 0;
-      padding-top: 5rem;
+      padding-top: 2rem;
 
       p {
         text-align: left;
@@ -117,6 +117,12 @@ const ContentWrapper = styled.div`
       img {
         max-width: 410px;
       }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .left {
+      padding-top: 5rem;
     }
   }
 `

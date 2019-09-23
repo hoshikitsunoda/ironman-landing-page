@@ -51,7 +51,7 @@ const HeadingWrapper = styled.div`
 `
 
 const CopyContentWrapper = styled.div`
-  @media (min-width: 767px) {
+  @media (min-width: 1024px) {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -59,7 +59,11 @@ const CopyContentWrapper = styled.div`
 `
 
 const ImageWrapper = styled.div`
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
+    padding: 0 0 2rem 0;
+  }
+
+  @media (min-width: 1024px) {
     flex: 0 1 35%;
     padding: 0 5rem 0 0;
   }
