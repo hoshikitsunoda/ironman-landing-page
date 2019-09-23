@@ -23,21 +23,17 @@ class App extends Component {
     let hash = md5(timestamp + privateKey + publicKey)
 
     try {
+      const paramsSetting = {
+        params: {
+          ts: timestamp,
+          apikey: publicKey,
+          hash: hash
+        }
+      }
+
       const [characterRes, comicsRes] = await Promise.all([
-        axios.get(urlCharacter, {
-          params: {
-            ts: timestamp,
-            apikey: publicKey,
-            hash: hash
-          }
-        }),
-        axios.get(urlComics, {
-          params: {
-            ts: timestamp,
-            apikey: publicKey,
-            hash: hash
-          }
-        })
+        axios.get(urlCharacter, paramsSetting),
+        axios.get(urlComics, paramsSetting)
       ])
 
       this.setState({
@@ -62,7 +58,7 @@ class App extends Component {
 }
 
 const AppWrapper = styled.div`
-  max-width: 1440px;
+  /* max-width: 1440px; */
   margin: 0 auto;
 `
 

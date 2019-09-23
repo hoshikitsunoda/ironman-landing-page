@@ -32,3 +32,17 @@ export const GlobalStyle = createGlobalStyle`
     display: block;
   }
 `
+
+const size = {
+  mobileS: '350px',
+  tabletS: '768px',
+  tabletL: '1024px',
+  laptop: '1200px'
+}
+
+export const Device = {
+  mobileS: size.mobileS,
+  tabletS: size.tabletS,
+  tabletL: size.tabletL,
+  laptop: size.laptop
+}

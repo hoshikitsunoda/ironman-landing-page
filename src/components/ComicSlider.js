@@ -7,16 +7,16 @@ const ComicSlider = props => {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 6.5,
     slidesToScroll: 3,
     adaptiveHeight: true,
     arrows: false,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToScroll: 1
         }
       }
     ]
@@ -46,7 +46,7 @@ const ComicSlider = props => {
 const StyledSlider = styled(Slider)`
   .slick-list {
     padding: 2rem 0 2rem;
-    margin-left: -1rem;
+    margin-left: -3rem;
 
     .slick-slide {
       margin: 0 1.5rem 0 0;
@@ -56,8 +56,9 @@ const StyledSlider = styled(Slider)`
       }
     }
 
-    @media (min-width: 767px) {
+    @media (min-width: 768px) {
       padding: 7rem 0 4rem;
+      margin-left: -2rem;
     }
   }
 `
