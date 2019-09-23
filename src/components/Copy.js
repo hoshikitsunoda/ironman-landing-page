@@ -32,6 +32,14 @@ const CopyWrapper = styled.div`
   .thumbnail {
     width: 100%;
   }
+
+  @media (min-width: 768px) {
+    padding: 0 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 1.2rem;
+  }
 `
 
 const HeadingWrapper = styled.div`
@@ -43,7 +51,7 @@ const HeadingWrapper = styled.div`
     line-height: 2.2rem;
   }
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     p {
       font-size: 2rem;
     }

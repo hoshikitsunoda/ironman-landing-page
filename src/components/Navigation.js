@@ -29,7 +29,7 @@ const NavWrapper = styled.div`
   align-items: flex-start;
   padding: 1.5rem 0;
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     padding: 2.5rem 0;
   }
 `
@@ -43,7 +43,7 @@ const LogoWrapper = styled.div`
     filter: brightness(0) saturate(100%) invert(1);
   }
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     width: auto;
   }
 `
@@ -54,7 +54,7 @@ const LinkWrapper = styled.div`
   align-items: center;
   width: calc(100% - 6.5rem);
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     width: auto;
   }
 
@@ -69,13 +69,14 @@ const Button = styled(Link)`
   text-decoration: none;
   border-radius: 0.2rem;
   padding: 0.2rem 0.7rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   cursor: pointer;
   box-shadow: 0 2px 5px -2px #fff;
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     padding: 0.6rem 2rem;
     font-size: 1rem;
+    font-weight: 700;
 
     &:hover {
       background-image: radial-gradient(
@@ -93,10 +94,10 @@ const NavLink = styled(Link)`
   color: #fff;
   text-decoration: none;
   margin: 0.2rem 0.7rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   cursor: pointer;
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     margin: 0.6rem 2rem;
     font-size: 1rem;
   }

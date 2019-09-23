@@ -13,7 +13,7 @@ const ComicSlider = props => {
     arrows: false,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2
@@ -56,7 +56,7 @@ const StyledSlider = styled(Slider)`
       }
     }
 
-    @media (min-width: 767px) {
+    @media (min-width: 768px) {
       padding: 7rem 0 4rem;
     }
   }

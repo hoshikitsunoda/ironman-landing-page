@@ -53,9 +53,10 @@ const PanelWrapper = styled.div`
   flex-direction: column;
   padding: 0.2rem;
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     flex: 0 1 50%;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 `
@@ -65,7 +66,7 @@ const PanelContainer = styled.div`
 
   img {
     width: auto;
-    height: 2rem;
+    height: 2.2rem;
     padding: 2rem 0 1rem;
   }
 
@@ -77,11 +78,11 @@ const PanelContainer = styled.div`
 
   p {
     color: #808080;
+    font-size: 0.875rem;
   }
 
-  @media (min-width: 767px) {
-    width: calc(50% - 4rem);
-    padding-right: 4rem;
+  @media (min-width: 768px) {
+    width: calc(50% - 2rem);
 
     &:first-child {
       order: 0;
@@ -97,8 +98,24 @@ const PanelContainer = styled.div`
 
     img {
       width: auto;
-      height: 3rem;
       padding: 0 0 1rem;
+    }
+
+    p {
+      color: #808080;
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    width: calc(50% - 4rem);
+
+    img {
+      height: 3.3rem;
+    }
+
+    h4 {
+      font-size: 1.25rem;
     }
   }
 `
