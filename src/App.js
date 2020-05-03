@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import md5 from 'md5'
 import styled from 'styled-components'
@@ -13,52 +13,58 @@ const characterCode = '1009368'
 const urlCharacter = `https://gateway.marvel.com:443/v1/public/characters/${characterCode}`
 const urlComics = `https://gateway.marvel.com:443/v1/public/comics?titleStartsWith=Iron%20Man`
 
-class App extends Component {
-  state = { characterData: [], comicsData: [] }
+const App = () => {
+  const [data, setData] = useState({ characterData: [], comicsData: [] })
 
-  async componentDidMount() {
-    let publicKey = process.env.REACT_APP_MARVEL_PUBLIC_API_KEY
-    let privateKey = process.env.REACT_APP_MARVEL_PRIVATE_API_KEY
-    let timestamp = process.env.REACT_APP_MARVEL_TIMESTAMP
-    let hash = md5(timestamp + privateKey + publicKey)
+  useEffect(() => {
+    const publicKey = process.env.REACT_APP_MARVEL_PUBLIC_API_KEY
+    const privateKey = process.env.REACT_APP_MARVEL_PRIVATE_API_KEY
+    const timestamp = process.env.REACT_APP_MARVEL_TIMESTAMP
+    const hash = md5(timestamp + privateKey + publicKey)
 
-    try {
+    const getData = async () => {
       const paramsSetting = {
         params: {
           ts: timestamp,
           apikey: publicKey,
-          hash: hash
-        }
+          hash: hash,
+        },
       }
 
-      const [characterRes, comicsRes] = await Promise.all([
-        axios.get(urlCharacter, paramsSetting),
-        axios.get(urlComics, paramsSetting)
-      ])
+      let charaResult = axios.get(urlCharacter, paramsSetting)
+      let comicsResult = axios.get(urlComics, paramsSetting)
 
-      this.setState({
-        characterData: characterRes.data.data.results[0],
-        comicsData: comicsRes.data.data.results
+      await axios
+        .all([charaResult, comicsResult])
+        .then(
+          axios.spread((...responses) => {
+            charaResult = responses[0]
+            comicsResult = responses[1]
+          })
+        )
+        .catch((errors) => {
+          throw new Error('Failed to get data')
+        })
+
+      setData({
+        characterData: charaResult.data.data.results[0],
+        comicsData: comicsResult.data.data.results,
       })
-    } catch (err) {
-      console.error(err)
     }
-  }
+    getData()
+  }, [])
 
-  render() {
-    return (
-      <AppWrapper className="App">
-        <Styled.GlobalStyle />
-        <Hero characterData={this.state.characterData} />
-        <Copy characterData={this.state.characterData} />
-        <ComicSlider comicsData={this.state.comicsData} />
-      </AppWrapper>
-    )
-  }
+  return (
+    <AppWrapper className="App">
+      <Styled.GlobalStyle />
+      <Hero characterData={data.characterData} />
+      <Copy characterData={data.characterData} />
+      <ComicSlider comicsData={data.comicsData} />
+    </AppWrapper>
+  )
 }
 
 const AppWrapper = styled.div`
-  /* max-width: 1440px; */
   margin: 0 auto;
 `
 
