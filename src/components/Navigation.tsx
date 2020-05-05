@@ -4,11 +4,11 @@ import styled from 'styled-components'
 
 import Logo from './Logo'
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   return (
     <NavWrapper className="nav-wrapper">
       <LogoWrapper className="logo-wrapper">
-        <Logo className="logo-image" />
+        <Logo />
       </LogoWrapper>
       <LinkWrapper className="linkWrapper">
         <Router>
@@ -20,7 +20,7 @@ const Navigation = () => {
   )
 }
 
-const NavWrapper = styled.div`
+const NavWrapper = styled('div')`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -31,7 +31,7 @@ const NavWrapper = styled.div`
   }
 `
 
-const LogoWrapper = styled.div`
+const LogoWrapper = styled('div')`
   width: 10.5rem;
 
   svg {
@@ -45,7 +45,7 @@ const LogoWrapper = styled.div`
   }
 `
 
-const LinkWrapper = styled.div`
+const LinkWrapper = styled('div')`
   display: flex;
   justify-content: flex-end;
   align-items: center;
