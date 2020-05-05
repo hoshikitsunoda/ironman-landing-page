@@ -7,34 +7,34 @@ import TacticianIcon from '../images/icons/icon-tactician.png'
 import EngineerIcon from '../images/icons/icon-engineer.png'
 import BusinessmanIcon from '../images/icons/icon-businessman.png'
 
-const panelData = {
+const panelData: { [index: string]: any } = {
   genius: {
     icon: GeniusIcon,
     heading: 'Super-Genius Intelligence',
     body:
-      'Quite apart from the powers granted him by the suit, Tony Stark is far more than a mechanical engineering prodigy who graduated from the Massachusetts Institute of Technology with honors at the age of 17.'
+      'Quite apart from the powers granted him by the suit, Tony Stark is far more than a mechanical engineering prodigy who graduated from the Massachusetts Institute of Technology with honors at the age of 17.',
   },
   tactician: {
     icon: TacticianIcon,
     heading: 'Expert Tactician',
     body:
-      'He is a brilliant tactician capable of quickly formulating battle strategies and new plans if the situation changes, like being able to elaborate complex plans in order to defeat different enemies.'
+      'He is a brilliant tactician capable of quickly formulating battle strategies and new plans if the situation changes, like being able to elaborate complex plans in order to defeat different enemies.',
   },
   engineer: {
     icon: EngineerIcon,
     heading: 'Master Engineer',
     body:
-      'He is an excellent engineer and mechanic capable of fixing almost any, if not all machinery.'
+      'He is an excellent engineer and mechanic capable of fixing almost any, if not all machinery.',
   },
   businessman: {
     icon: BusinessmanIcon,
     heading: 'Master Businessman',
     body:
-      "Stark is extremely well-respected in the business world, able to command people's attentions when he speaks on economic matters.  He has built up several multi-million dollar companies from virtually nothing."
-  }
+      "Stark is extremely well-respected in the business world, able to command people's attentions when he speaks on economic matters.  He has built up several multi-million dollar companies from virtually nothing.",
+  },
 }
 
-const CopyPanel = () => {
+const CopyPanel: React.FC = () => {
   return (
     <PanelWrapper className="copy-panel">
       {Object.keys(panelData).map((key, i) => (
