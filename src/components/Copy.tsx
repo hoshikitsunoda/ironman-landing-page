@@ -7,7 +7,7 @@ interface CharacterDataProps {
   characterData: { thumbnail: { path: string; extension: string } }
 }
 
-const Copy: React.FC<CharacterDataProps> = (props) => {
+const Copy: React.FC<CharacterDataProps> = (props: CharacterDataProps) => {
   const imgSrcPath =
     props.characterData.thumbnail && props.characterData.thumbnail.path
   const imgSrcExtension =

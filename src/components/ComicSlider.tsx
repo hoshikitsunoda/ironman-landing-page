@@ -15,7 +15,7 @@ interface ComicsDataProps {
   }[]
 }
 
-const ComicSlider: React.FC<ComicsDataProps> = (props) => {
+const ComicSlider: React.FC<ComicsDataProps> = (props: ComicsDataProps) => {
   const settings = {
     dots: false,
     infinite: true,
