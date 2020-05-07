@@ -13,13 +13,45 @@ const characterCode = '1009368'
 const urlCharacter = `https://gateway.marvel.com:443/v1/public/characters/${characterCode}`
 const urlComics = `https://gateway.marvel.com:443/v1/public/comics?titleStartsWith=Iron%20Man`
 
-const App = () => {
-  const [data, setData] = useState({ characterData: [], comicsData: [] })
+interface CharaProps {
+  description: string
+  thumbnail: {
+    path: string
+    extension: string
+  }
+}
+
+interface ComicsProps {
+  [index: number]: {
+    images: {
+      path: string
+      extension: string
+    }[]
+    urls: {
+      url: string
+    }[]
+  }
+}
+
+const App: React.FC<{
+  initialChara?: CharaProps
+  initialComics?: []
+}> = ({
+  initialChara = {
+    description: '',
+    thumbnail: { path: '', extension: '' },
+  },
+  initialComics = [],
+}) => {
+  const [data, setData] = useState({
+    characterData: initialChara,
+    comicsData: initialComics,
+  })
 
   useEffect(() => {
     const publicKey = process.env.REACT_APP_MARVEL_PUBLIC_API_KEY
     const privateKey = process.env.REACT_APP_MARVEL_PRIVATE_API_KEY
-    const timestamp = process.env.REACT_APP_MARVEL_TIMESTAMP
+    const timestamp = process.env.REACT_APP_MARVEL_TIMESTAMP!
     const hash = md5(timestamp + privateKey + publicKey)
 
     const getData = async () => {
@@ -31,8 +63,8 @@ const App = () => {
         },
       }
 
-      let charaResult = axios.get(urlCharacter, paramsSetting)
-      let comicsResult = axios.get(urlComics, paramsSetting)
+      let charaResult = await axios.get(urlCharacter, paramsSetting)
+      let comicsResult = await axios.get(urlComics, paramsSetting)
 
       await axios
         .all([charaResult, comicsResult])
@@ -64,7 +96,7 @@ const App = () => {
   )
 }
 
-const AppWrapper = styled.div`
+const AppWrapper = styled('div')`
   margin: 0 auto;
 `
 

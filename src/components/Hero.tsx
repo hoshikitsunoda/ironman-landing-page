@@ -5,11 +5,15 @@ import styled from 'styled-components'
 import heroBackGround from '../images/background.png'
 import ironManCartoon from '../images/Iron-man-Cartoon.png'
 
-const Hero = props => {
+interface CharacterDataProps {
+  characterData: { description: string }
+}
+
+const Hero: React.FC<CharacterDataProps> = (props) => {
   return (
     <HeroWrapper className="hero-wrapper">
       <HeroContainer className="hero-container">
-        <Navigation className="navigation" />
+        <Navigation />
         <ContentWrapper className="hero-content-wrapper">
           <div className="left">
             <p>{props.characterData.description}</p>
@@ -24,14 +28,14 @@ const Hero = props => {
   )
 }
 
-const HeroWrapper = styled.div`
+const HeroWrapper = styled('div')`
   background-image: url(${heroBackGround});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top right;
 `
 
-const HeroContainer = styled.div`
+const HeroContainer = styled('div')`
   padding: 0 1.2rem 4rem;
   max-width: 1440px;
   margin: 0 auto;
@@ -45,7 +49,7 @@ const HeroContainer = styled.div`
   }
 `
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled('div')`
   display: flex;
   flex-direction: column;
   justify-content: center;

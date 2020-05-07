@@ -3,7 +3,11 @@ import CopyPanel from './CopyPanel'
 
 import styled from 'styled-components'
 
-const Copy = props => {
+interface CharacterDataProps {
+  characterData: { thumbnail: { path: string; extension: string } }
+}
+
+const Copy: React.FC<CharacterDataProps> = (props) => {
   const imgSrcPath =
     props.characterData.thumbnail && props.characterData.thumbnail.path
   const imgSrcExtension =
@@ -18,7 +22,7 @@ const Copy = props => {
         <ImageWrapper className="image-wrapper">
           <img src={imgSrc} alt="thumbnail" className="thumbnail" />
         </ImageWrapper>
-        <CopyPanel className="copy-panels" />
+        <CopyPanel />
       </CopyContentWrapper>
     </CopyWrapper>
   )

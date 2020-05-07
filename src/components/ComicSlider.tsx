@@ -3,7 +3,19 @@ import Slider from 'react-slick'
 
 import styled from 'styled-components'
 
-const ComicSlider = props => {
+interface ComicsDataProps {
+  comicsData: {
+    images: {
+      path: string
+      extension: string
+    }[]
+    urls: {
+      url: string
+    }[]
+  }[]
+}
+
+const ComicSlider: React.FC<ComicsDataProps> = (props) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -16,10 +28,10 @@ const ComicSlider = props => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   }
 
   return (
