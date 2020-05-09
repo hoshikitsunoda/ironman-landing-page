@@ -3,6 +3,13 @@ import Slider from 'react-slick'
 
 import styled from 'styled-components'
 
+class Comics {
+  constructor(
+    public comicImage: string,
+    public comicLink: string,
+    public comicTitle: string
+  ) {}
+}
 interface ComicsDataProps {
   comicsData: {
     images: {
@@ -12,11 +19,30 @@ interface ComicsDataProps {
     urls: {
       url: string
     }[]
+    title: string
   }[]
 }
 
+interface SliderResponsiveSetting {
+  breakpoint: number
+  settings: {
+    slidesToShow: number
+    slidesToScroll: number
+  }
+}
+
+interface SliderSetting {
+  dots: boolean
+  infinite: boolean
+  slidesToShow: number
+  slidesToScroll: number
+  adaptiveHeight: boolean
+  arrows: boolean
+  responsive: SliderResponsiveSetting[]
+}
+
 const ComicSlider: React.FC<ComicsDataProps> = (props: ComicsDataProps) => {
-  const settings = {
+  const settings: SliderSetting = {
     dots: false,
     infinite: true,
     slidesToShow: 6.5,
@@ -36,17 +62,17 @@ const ComicSlider: React.FC<ComicsDataProps> = (props: ComicsDataProps) => {
 
   return (
     <StyledSlider {...settings}>
-      {props.comicsData.map((item, i) => {
-        const comicImagePath = item && item.images[0].path
-        const comicImageExtension = item && item.images[0].extension
-        const comicImage = `${comicImagePath}.${comicImageExtension}`
-
-        const link = item.urls[0].url
+      {props.comicsData.map((item, i: number) => {
+        const comic = new Comics(
+          `${item && item.images[0].path}.${item && item.images[0].extension}`,
+          item.urls[0].url,
+          item.title
+        )
 
         return (
           <div key={i}>
-            <a href={link} rel="noopener noreferrer" target="_blank">
-              <img src={comicImage} alt={`comic-${i}`} />
+            <a href={comic.comicLink} rel="noopener noreferrer" target="_blank">
+              <img src={comic.comicImage} alt={`${comic.comicTitle}`} />
             </a>
           </div>
         )
