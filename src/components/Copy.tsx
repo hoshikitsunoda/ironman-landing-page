@@ -8,11 +8,11 @@ interface CharacterDataProps {
 }
 
 const Copy: React.FC<CharacterDataProps> = (props: CharacterDataProps) => {
-  const imgSrcPath =
+  const imgSrcPath: string =
     props.characterData.thumbnail && props.characterData.thumbnail.path
-  const imgSrcExtension =
+  const imgSrcExtension: string =
     props.characterData.thumbnail && props.characterData.thumbnail.extension
-  const imgSrc = `${imgSrcPath}.${imgSrcExtension}`
+  const imgSrc: string = `${imgSrcPath}.${imgSrcExtension}`
   return (
     <CopyWrapper className="copy-wrapper">
       <HeadingWrapper className="text-wrapper heading">
