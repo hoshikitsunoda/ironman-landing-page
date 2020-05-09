@@ -7,12 +7,12 @@ interface CharacterDataProps {
   characterData: { thumbnail: { path: string; extension: string } }
 }
 
-const Copy: React.FC<CharacterDataProps> = (props) => {
-  const imgSrcPath =
+const Copy: React.FC<CharacterDataProps> = (props: CharacterDataProps) => {
+  const imgSrcPath: string =
     props.characterData.thumbnail && props.characterData.thumbnail.path
-  const imgSrcExtension =
+  const imgSrcExtension: string =
     props.characterData.thumbnail && props.characterData.thumbnail.extension
-  const imgSrc = `${imgSrcPath}.${imgSrcExtension}`
+  const imgSrc: string = `${imgSrcPath}.${imgSrcExtension}`
   return (
     <CopyWrapper className="copy-wrapper">
       <HeadingWrapper className="text-wrapper heading">
@@ -28,7 +28,7 @@ const Copy: React.FC<CharacterDataProps> = (props) => {
   )
 }
 
-const CopyWrapper = styled.div`
+const CopyWrapper = styled('div')`
   padding: 0 1.2rem;
   max-width: 1440px;
   margin: 0 auto;
@@ -46,7 +46,7 @@ const CopyWrapper = styled.div`
   }
 `
 
-const HeadingWrapper = styled.div`
+const HeadingWrapper = styled('div')`
   text-align: center;
   padding: 3rem 2.5rem;
 
@@ -62,7 +62,7 @@ const HeadingWrapper = styled.div`
   }
 `
 
-const CopyContentWrapper = styled.div`
+const CopyContentWrapper = styled('div')`
   @media (min-width: 1024px) {
     display: flex;
     justify-content: center;
@@ -70,7 +70,7 @@ const CopyContentWrapper = styled.div`
   }
 `
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled('div')`
   @media (min-width: 768px) {
     padding: 0 0 2rem 0;
   }

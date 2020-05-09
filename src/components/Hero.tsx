@@ -9,7 +9,7 @@ interface CharacterDataProps {
   characterData: { description: string }
 }
 
-const Hero: React.FC<CharacterDataProps> = (props) => {
+const Hero: React.FC<CharacterDataProps> = (props: CharacterDataProps) => {
   return (
     <HeroWrapper className="hero-wrapper">
       <HeroContainer className="hero-container">
