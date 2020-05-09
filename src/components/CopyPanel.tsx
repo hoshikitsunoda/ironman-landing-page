@@ -7,7 +7,17 @@ import TacticianIcon from '../images/icons/icon-tactician.png'
 import EngineerIcon from '../images/icons/icon-engineer.png'
 import BusinessmanIcon from '../images/icons/icon-businessman.png'
 
-const panelData: { [index: string]: any } = {
+interface PanelData {
+  icon: string
+  heading: string
+  body: string
+}
+
+interface PanelItem {
+  [key: string]: PanelData
+}
+
+const panelData: PanelItem = {
   genius: {
     icon: GeniusIcon,
     heading: 'Super-Genius Intelligence',
