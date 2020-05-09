@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import md5 from 'md5'
 import {
   urlCharacter,
@@ -26,20 +26,27 @@ interface CharaProps {
 }
 
 interface ComicsProps {
-  [index: number]: {
-    images: {
-      path: string
-      extension: string
-    }[]
-    urls: {
-      url: string
-    }[]
+  images: {
+    path: string
+    extension: string
+  }[]
+  urls: {
+    url: string
+  }[]
+  title: string
+}
+
+interface AxiosParams {
+  params: {
+    ts: string
+    apikey: string | undefined
+    hash: string
   }
 }
 
 const App: React.FC<{
   initialChara?: CharaProps
-  initialComics?: []
+  initialComics?: ComicsProps[]
 }> = ({
   initialChara = {
     description: '',
@@ -53,10 +60,10 @@ const App: React.FC<{
   })
 
   useEffect(() => {
-    const hash = md5(timestamp + privateKey + publicKey)
+    const hash: string = md5(timestamp + privateKey + publicKey)
 
-    const getData = async () => {
-      const paramsSetting = {
+    const getData = async (): Promise<void> => {
+      const paramsSetting: AxiosParams = {
         params: {
           ts: timestamp,
           apikey: publicKey,
@@ -67,10 +74,15 @@ const App: React.FC<{
       let charaResult = await axios.get(urlCharacter, paramsSetting)
       let comicsResult = await axios.get(urlComics, paramsSetting)
 
+      const promises = [
+        Promise.resolve(charaResult),
+        Promise.resolve(comicsResult),
+      ]
+
       await axios
-        .all([charaResult, comicsResult])
+        .all(promises)
         .then(
-          axios.spread((...responses) => {
+          axios.spread((...responses: AxiosResponse[]) => {
             charaResult = responses[0]
             comicsResult = responses[1]
           })
