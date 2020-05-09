@@ -1,45 +1,8 @@
 import React from 'react'
 import Slider from 'react-slick'
+import { Comics, ComicsDataProps, SliderSetting } from '../models/ComicSlider'
 
 import styled from 'styled-components'
-
-class Comics {
-  constructor(
-    public comicImage: string,
-    public comicLink: string,
-    public comicTitle: string
-  ) {}
-}
-interface ComicsDataProps {
-  comicsData: {
-    images: {
-      path: string
-      extension: string
-    }[]
-    urls: {
-      url: string
-    }[]
-    title: string
-  }[]
-}
-
-interface SliderResponsiveSetting {
-  breakpoint: number
-  settings: {
-    slidesToShow: number
-    slidesToScroll: number
-  }
-}
-
-interface SliderSetting {
-  dots: boolean
-  infinite: boolean
-  slidesToShow: number
-  slidesToScroll: number
-  adaptiveHeight: boolean
-  arrows: boolean
-  responsive: SliderResponsiveSetting[]
-}
 
 const ComicSlider: React.FC<ComicsDataProps> = (props: ComicsDataProps) => {
   const settings: SliderSetting = {
