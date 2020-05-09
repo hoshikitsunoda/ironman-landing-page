@@ -1,4 +1,5 @@
 import React from 'react'
+import { Panel, PanelItem } from '../models/CopyPanel'
 
 import styled from 'styled-components'
 
@@ -6,24 +7,6 @@ import GeniusIcon from '../images/icons/icon-genius.png'
 import TacticianIcon from '../images/icons/icon-tactician.png'
 import EngineerIcon from '../images/icons/icon-engineer.png'
 import BusinessmanIcon from '../images/icons/icon-businessman.png'
-
-interface PanelData {
-  icon: string
-  heading: string
-  body: string
-}
-
-interface PanelItem {
-  [key: string]: PanelData
-}
-
-class Panel {
-  constructor(
-    public icon: string,
-    public heading: string,
-    public body: string
-  ) {}
-}
 
 const panelData: PanelItem = {
   genius: new Panel(
