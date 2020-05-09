@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import md5 from 'md5'
+import {
+  urlCharacter,
+  urlComics,
+  publicKey,
+  privateKey,
+  timestamp,
+} from './data/api'
+
 import styled from 'styled-components'
 
 import Hero from './components/Hero'
@@ -8,10 +16,6 @@ import Copy from './components/Copy'
 import ComicSlider from './components/ComicSlider'
 
 import * as Styled from './components/styled'
-
-const characterCode = '1009368'
-const urlCharacter = `https://gateway.marvel.com:443/v1/public/characters/${characterCode}`
-const urlComics = `https://gateway.marvel.com:443/v1/public/comics?titleStartsWith=Iron%20Man`
 
 interface CharaProps {
   description: string
@@ -49,9 +53,6 @@ const App: React.FC<{
   })
 
   useEffect(() => {
-    const publicKey = process.env.REACT_APP_MARVEL_PUBLIC_API_KEY
-    const privateKey = process.env.REACT_APP_MARVEL_PRIVATE_API_KEY
-    const timestamp = process.env.REACT_APP_MARVEL_TIMESTAMP!
     const hash = md5(timestamp + privateKey + publicKey)
 
     const getData = async () => {
