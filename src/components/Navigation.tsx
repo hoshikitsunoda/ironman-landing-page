@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
+
 import styled from 'styled-components'
+import * as Styled from '../components/styled'
 
 import Logo from './Logo'
 
@@ -26,7 +28,7 @@ const NavWrapper = styled('div')`
   align-items: flex-start;
   padding: 1.5rem 0;
 
-  @media (min-width: 768px) {
+  @media ${Styled.Device.tablet} {
     padding: 2.5rem 0;
   }
 `
@@ -40,7 +42,7 @@ const LogoWrapper = styled('div')`
     filter: brightness(0) saturate(100%) invert(1);
   }
 
-  @media (min-width: 768px) {
+  @media ${Styled.Device.tablet} {
     width: auto;
   }
 `
@@ -51,11 +53,11 @@ const LinkWrapper = styled('div')`
   align-items: center;
   width: calc(100% - 6.5rem);
 
-  @media (min-width: 768px) {
+  @media ${Styled.Device.tablet} {
     width: auto;
   }
 
-  @media (min-width: 350px) {
+  @media ${Styled.Device.mobile} {
     width: calc(100% - 10.5rem);
   }
 `
@@ -70,7 +72,7 @@ const Button = styled(Link)`
   cursor: pointer;
   box-shadow: 0 2px 5px -2px #fff;
 
-  @media (min-width: 768px) {
+  @media ${Styled.Device.tablet} {
     padding: 0.6rem 2rem;
     font-size: 1rem;
     font-weight: 700;
@@ -94,7 +96,7 @@ const NavLink = styled(Link)`
   font-size: 0.75rem;
   cursor: pointer;
 
-  @media (min-width: 768px) {
+  @media ${Styled.Device.tablet} {
     margin: 0.6rem 2rem;
     font-size: 1rem;
   }
