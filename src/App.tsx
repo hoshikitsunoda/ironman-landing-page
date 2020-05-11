@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios, { AxiosResponse } from 'axios'
+import axios, { AxiosResponse, AxiosRequestConfig } from 'axios'
 import md5 from 'md5'
 import {
   urlCharacter,
@@ -36,14 +36,6 @@ interface ComicsProps {
   title: string
 }
 
-interface AxiosParams {
-  params: {
-    ts: string
-    apikey: string | undefined
-    hash: string
-  }
-}
-
 const App: React.FC<{
   initialChara?: CharaProps
   initialComics?: ComicsProps[]
@@ -63,7 +55,7 @@ const App: React.FC<{
     const hash: string = md5(timestamp + privateKey + publicKey)
 
     const getData = async (): Promise<void> => {
-      const paramsSetting: AxiosParams = {
+      const paramsSetting: AxiosRequestConfig = {
         params: {
           ts: timestamp,
           apikey: publicKey,
