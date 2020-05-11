@@ -7,12 +7,12 @@ import styled from 'styled-components'
 import Hero from './components/Hero'
 import Copy from './components/Copy'
 import ComicSlider from './components/ComicSlider'
-import { CharaProps, ComicsProps } from './models/Props'
+import { CharacterProps, ComicsProps } from './models/Props'
 
 import * as Styled from './components/styled'
 
 const App: React.FC<{
-  initialChara?: CharaProps
+  initialChara?: CharacterProps
   initialComics?: ComicsProps[]
 }> = ({
   initialChara = {
