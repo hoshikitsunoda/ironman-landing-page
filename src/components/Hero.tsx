@@ -1,15 +1,14 @@
 import React from 'react'
 import Navigation from './Navigation'
+import { HeroDataProps } from '../models/Props'
+
 import styled from 'styled-components'
+import * as Styled from '../components/styled'
 
 import heroBackGround from '../images/background.png'
 import ironManCartoon from '../images/Iron-man-Cartoon.png'
 
-interface CharacterDataProps {
-  characterData: { description: string }
-}
-
-const Hero: React.FC<CharacterDataProps> = (props: CharacterDataProps) => {
+const Hero: React.FC<HeroDataProps> = (props: HeroDataProps) => {
   return (
     <HeroWrapper className="hero-wrapper">
       <HeroContainer className="hero-container">
@@ -40,11 +39,11 @@ const HeroContainer = styled('div')`
   max-width: 1440px;
   margin: 0 auto;
 
-  @media (min-width: 768px) {
+  @media ${Styled.Device.tablet} {
     padding: 0 3rem 8rem;
   }
 
-  @media (min-width: 1024px) {
+  @media ${Styled.Device.laptop} {
     padding: 1rem 5rem 8rem;
   }
 `
@@ -86,7 +85,7 @@ const ContentWrapper = styled('div')`
     }
   }
 
-  @media (min-width: 768px) {
+  @media ${Styled.Device.tablet} {
     flex-direction: row;
     align-items: flex-start;
 
@@ -128,7 +127,7 @@ const ContentWrapper = styled('div')`
     }
   }
 
-  @media (min-width: 1024px) {
+  @media ${Styled.Device.laptop} {
     .left {
       padding-top: 5rem;
     }
