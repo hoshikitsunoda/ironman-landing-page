@@ -42,9 +42,11 @@ export const GlobalStyle = createGlobalStyle`
 const size = {
   tablet: '768px',
   laptop: '1024px',
+  laptopL: '1200px',
 }
 
 export const Device = {
   tablet: `(min-width: ${size.tablet})`,
   laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
 }
