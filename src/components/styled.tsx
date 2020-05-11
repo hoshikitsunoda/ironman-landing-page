@@ -40,15 +40,11 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 const size = {
-  mobileS: '350px',
-  tabletS: '768px',
-  tabletL: '1024px',
-  laptop: '1200px',
+  tablet: '768px',
+  laptop: '1024px',
 }
 
 export const Device = {
-  mobileS: size.mobileS,
-  tabletS: size.tabletS,
-  tabletL: size.tabletL,
-  laptop: size.laptop,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
 }
