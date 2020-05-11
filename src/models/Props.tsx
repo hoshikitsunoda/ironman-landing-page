@@ -1,4 +1,4 @@
-export interface CharaProps {
+export interface CharacterProps {
   description: string
   thumbnail: {
     path: string
