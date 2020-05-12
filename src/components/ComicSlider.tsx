@@ -3,7 +3,6 @@ import Slider from 'react-slick'
 import { Comics, ComicsDataProps, SliderSetting } from '../models/ComicSlider'
 
 import styled from 'styled-components'
-import * as Styled from '../components/styled'
 
 const ComicSlider: React.FC<ComicsDataProps> = (props: ComicsDataProps) => {
   const settings: SliderSetting = {
@@ -58,7 +57,7 @@ const StyledSlider = styled(Slider)`
       }
     }
 
-    @media ${Styled.Device.tablet} {
+    @media ${(props) => props.theme.device.tablet} {
       padding: 7rem 0 4rem;
       margin-left: -2rem;
     }

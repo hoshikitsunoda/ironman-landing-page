@@ -39,11 +39,11 @@ const HeroContainer = styled('div')`
   max-width: 1440px;
   margin: 0 auto;
 
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     padding: 0 3rem 8rem;
   }
 
-  @media ${Styled.Device.laptop} {
+  @media ${(props) => props.theme.device.laptop} {
     padding: 1rem 5rem 8rem;
   }
 `
@@ -82,7 +82,7 @@ const ContentWrapper = styled('div')`
     }
   }
 
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     ${Styled.flexbox('row', 'center', 'flex-start')}
 
     .left {
@@ -118,7 +118,7 @@ const ContentWrapper = styled('div')`
     }
   }
 
-  @media ${Styled.Device.laptop} {
+  @media ${(props) => props.theme.device.laptop} {
     .left {
       padding-top: 5rem;
     }

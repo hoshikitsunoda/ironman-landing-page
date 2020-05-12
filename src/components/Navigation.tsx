@@ -26,7 +26,7 @@ const NavWrapper = styled('div')`
   ${Styled.flexbox('row', 'space-between', 'flex-start')}
   padding: 1.5rem 0;
 
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     padding: 2.5rem 0;
   }
 `
@@ -40,7 +40,7 @@ const LogoWrapper = styled('div')`
     filter: brightness(0) saturate(100%) invert(1);
   }
 
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     width: auto;
   }
 `
@@ -49,11 +49,11 @@ const LinkWrapper = styled('div')`
   ${Styled.flexbox('row', 'flex-end', 'center')}
   width: calc(100% - 6.5rem);
 
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     width: auto;
   }
 
-  @media ${Styled.Device.mobile} {
+  @media ${(props) => props.theme.device.mobile} {
     width: calc(100% - 10.5rem);
   }
 `
@@ -68,7 +68,7 @@ const Button = styled(Link)`
   cursor: pointer;
   box-shadow: 0 2px 5px -2px ${(props) => props.theme.colors.text};
 
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     padding: 0.6rem 2rem;
     font-size: 1rem;
     font-weight: 700;
@@ -87,7 +87,7 @@ const NavLink = styled(Link)`
   font-size: 0.75rem;
   cursor: pointer;
 
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     margin: 0.6rem 2rem;
     font-size: 1rem;
   }

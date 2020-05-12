@@ -36,11 +36,11 @@ const CopyWrapper = styled('div')`
     width: 100%;
   }
 
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     padding: 0 3rem;
   }
 
-  @media ${Styled.Device.laptop} {
+  @media ${(props) => props.theme.device.laptop} {
     padding: 0 1.2rem;
   }
 `
@@ -54,7 +54,7 @@ const HeadingWrapper = styled('div')`
     line-height: 2.2rem;
   }
 
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     p {
       font-size: 2rem;
     }
@@ -62,17 +62,17 @@ const HeadingWrapper = styled('div')`
 `
 
 const CopyContentWrapper = styled('div')`
-  @media ${Styled.Device.laptop} {
+  @media ${(props) => props.theme.device.laptop} {
     ${Styled.flexbox('row', 'center', 'flex-start')}
   }
 `
 
 const ImageWrapper = styled('div')`
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     padding: 0 0 2rem 0;
   }
 
-  @media ${Styled.Device.laptop} {
+  @media ${(props) => props.theme.device.laptop} {
     flex: 0 1 35%;
     padding: 0 5rem 0 0;
   }

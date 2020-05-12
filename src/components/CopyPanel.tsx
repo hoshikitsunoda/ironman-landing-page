@@ -22,7 +22,7 @@ const PanelWrapper = styled('div')`
   ${Styled.flexbox('column', '', '')}
   padding: 0.2rem;
 
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     ${Styled.flexbox('row', 'space-between', '')}
     flex: 0 1 50%;
     flex-wrap: wrap;
@@ -49,7 +49,7 @@ const PanelContainer = styled('div')`
     font-size: 0.875rem;
   }
 
-  @media ${Styled.Device.tablet} {
+  @media ${(props) => props.theme.device.tablet} {
     width: calc(50% - 2rem);
 
     &:first-child {
@@ -75,7 +75,7 @@ const PanelContainer = styled('div')`
     }
   }
 
-  @media ${Styled.Device.laptopL} {
+  @media ${(props) => props.theme.device.laptopL} {
     width: calc(50% - 4rem);
 
     img {
