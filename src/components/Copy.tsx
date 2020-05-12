@@ -63,9 +63,7 @@ const HeadingWrapper = styled('div')`
 
 const CopyContentWrapper = styled('div')`
   @media ${Styled.Device.laptop} {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    ${Styled.flexbox('row', 'center', 'flex-start')}
   }
 `
 

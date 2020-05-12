@@ -23,9 +23,7 @@ const Navigation: React.FC = () => {
 }
 
 const NavWrapper = styled('div')`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  ${Styled.flexbox('row', 'space-between', 'flex-start')}
   padding: 1.5rem 0;
 
   @media ${Styled.Device.tablet} {
@@ -48,9 +46,7 @@ const LogoWrapper = styled('div')`
 `
 
 const LinkWrapper = styled('div')`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  ${Styled.flexbox('row', 'flex-end', 'center')}
   width: calc(100% - 6.5rem);
 
   @media ${Styled.Device.tablet} {
@@ -78,12 +74,7 @@ const Button = styled(Link)`
     font-weight: 700;
 
     &:hover {
-      background-image: radial-gradient(
-        70% 120%,
-        #f4bc00 6%,
-        #f4bc00 1%,
-        #cc3332 79%
-      );
+      ${Styled.buttonHover}
       border-radius: 5px;
     }
   }

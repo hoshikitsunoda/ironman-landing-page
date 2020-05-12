@@ -49,10 +49,7 @@ const HeroContainer = styled('div')`
 `
 
 const ContentWrapper = styled('div')`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${Styled.flexbox('column', 'center', 'center')}
 
   .left {
     order: 1;
@@ -86,8 +83,7 @@ const ContentWrapper = styled('div')`
   }
 
   @media ${Styled.Device.tablet} {
-    flex-direction: row;
-    align-items: flex-start;
+    ${Styled.flexbox('row', 'center', 'flex-start')}
 
     .left {
       flex: 0 1 60%;
@@ -107,12 +103,7 @@ const ContentWrapper = styled('div')`
         padding: 1.2rem 6.5rem;
 
         &:hover {
-          background-image: radial-gradient(
-            70% 120%,
-            #f4bc00 6%,
-            #f4bc00 1%,
-            #cc3332 79%
-          );
+          ${Styled.buttonHover}
         }
       }
     }

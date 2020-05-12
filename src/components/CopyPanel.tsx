@@ -19,14 +19,12 @@ const CopyPanel: React.FC = () => {
 }
 
 const PanelWrapper = styled('div')`
-  display: flex;
-  flex-direction: column;
+  ${Styled.flexbox('column', '', '')}
   padding: 0.2rem;
 
   @media ${Styled.Device.tablet} {
+    ${Styled.flexbox('row', 'space-between', '')}
     flex: 0 1 50%;
-    flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
   }
 `
