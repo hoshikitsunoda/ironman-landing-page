@@ -53,12 +53,21 @@ export const Device = {
   laptopL: `(min-width: ${size.laptopL})`,
 }
 
+export const theme = {
+  colors: {
+    primary: '#f4bc00',
+    secondary: '#cc3332',
+    text: '#fff',
+    secondaryText: '#808080',
+  },
+}
+
 export const buttonHover = css`
   background-image: radial-gradient(
     70% 120%,
-    #f4bc00 6%,
-    #f4bc00 1%,
-    #cc3332 79%
+    ${(props) => props.theme.colors.primary} 6%,
+    ${(props) => props.theme.colors.primary} 1%,
+    ${(props) => props.theme.colors.secondary} 79%
   );
 `
 export function flexbox($direction: string, $justify: string, $align: string) {
