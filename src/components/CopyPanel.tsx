@@ -2,6 +2,7 @@ import React from 'react'
 import { panelData } from '../data/seed'
 
 import styled from 'styled-components'
+import * as Styled from '../components/styled'
 
 const CopyPanel: React.FC = () => {
   return (
@@ -18,14 +19,12 @@ const CopyPanel: React.FC = () => {
 }
 
 const PanelWrapper = styled('div')`
-  display: flex;
-  flex-direction: column;
+  ${Styled.flexbox('column', '', '')}
   padding: 0.2rem;
 
-  @media (min-width: 768px) {
+  @media ${(props) => props.theme.device.tablet} {
+    ${Styled.flexbox('row', 'space-between', '')}
     flex: 0 1 50%;
-    flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
   }
 `
@@ -46,11 +45,11 @@ const PanelContainer = styled('div')`
   }
 
   p {
-    color: #808080;
+    color: ${(props) => props.theme.colors.secondaryText};
     font-size: 0.875rem;
   }
 
-  @media (min-width: 768px) {
+  @media ${(props) => props.theme.device.tablet} {
     width: calc(50% - 2rem);
 
     &:first-child {
@@ -71,12 +70,12 @@ const PanelContainer = styled('div')`
     }
 
     p {
-      color: #808080;
+      color: ${(props) => props.theme.colors.secondaryText};
       font-size: 1rem;
     }
   }
 
-  @media (min-width: 1200px) {
+  @media ${(props) => props.theme.device.laptopL} {
     width: calc(50% - 4rem);
 
     img {

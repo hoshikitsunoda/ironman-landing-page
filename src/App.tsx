@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import axios, { AxiosResponse } from 'axios'
+import axios, { AxiosResponse, AxiosError } from 'axios'
 import fetchData from './utils/api'
 
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 
 import Hero from './components/Hero'
 import Copy from './components/Copy'
@@ -45,24 +45,35 @@ const App: React.FC<{
     fetchData()
       .then(
         axios.spread((...responses: AxiosResponse[]) => {
-          setData({
-            characterData: responses[0].data.data.results[0],
-            comicsData: responses[1].data.data.results,
-          })
+          if (responses != null) {
+            setData({
+              characterData: responses[0].data.data.results[0],
+              comicsData: responses[1].data.data.results,
+            })
+          }
         })
       )
-      .catch((errors) => {
+      .catch((error: AxiosError) => {
+        if (error.response) {
+          console.log(error.response.data)
+          console.log(error.response.status)
+          console.log(error.response.headers)
+        } else {
+          console.log(error.message)
+        }
         throw new Error('Failed to get data')
       })
   }, [])
 
   return (
-    <AppWrapper className="App">
-      <Styled.GlobalStyle />
-      <Hero characterData={data.characterData} />
-      <Copy characterData={data.characterData} />
-      <ComicSlider comicsData={data.comicsData} />
-    </AppWrapper>
+    <ThemeProvider theme={Styled.theme}>
+      <AppWrapper className="App">
+        <Styled.GlobalStyle />
+        <Hero characterData={data.characterData} />
+        <Copy characterData={data.characterData} />
+        <ComicSlider comicsData={data.comicsData} />
+      </AppWrapper>
+    </ThemeProvider>
   )
 }
 

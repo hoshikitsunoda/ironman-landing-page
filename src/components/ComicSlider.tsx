@@ -50,14 +50,14 @@ const StyledSlider = styled(Slider)`
     margin-left: -3rem;
 
     .slick-slide {
-      margin: 0 1.5rem 0 0;
+      margin: 0 1.5rem 2.2rem 0;
 
       img {
         width: 100%;
       }
     }
 
-    @media (min-width: 768px) {
+    @media ${(props) => props.theme.device.tablet} {
       padding: 7rem 0 4rem;
       margin-left: -2rem;
     }

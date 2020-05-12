@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
+
 import styled from 'styled-components'
+import * as Styled from '../components/styled'
 
 import Logo from './Logo'
 
@@ -21,12 +23,10 @@ const Navigation: React.FC = () => {
 }
 
 const NavWrapper = styled('div')`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  ${Styled.flexbox('row', 'space-between', 'flex-start')}
   padding: 1.5rem 0;
 
-  @media (min-width: 768px) {
+  @media ${(props) => props.theme.device.tablet} {
     padding: 2.5rem 0;
   }
 `
@@ -40,61 +40,54 @@ const LogoWrapper = styled('div')`
     filter: brightness(0) saturate(100%) invert(1);
   }
 
-  @media (min-width: 768px) {
+  @media ${(props) => props.theme.device.tablet} {
     width: auto;
   }
 `
 
 const LinkWrapper = styled('div')`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  ${Styled.flexbox('row', 'flex-end', 'center')}
   width: calc(100% - 6.5rem);
 
-  @media (min-width: 768px) {
+  @media ${(props) => props.theme.device.tablet} {
     width: auto;
   }
 
-  @media (min-width: 350px) {
+  @media ${(props) => props.theme.device.mobile} {
     width: calc(100% - 10.5rem);
   }
 `
 
 const Button = styled(Link)`
-  background-color: #f4bc00;
-  color: #fff;
+  background-color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.text};
   text-decoration: none;
   border-radius: 0.2rem;
   padding: 0.2rem 0.7rem;
   font-size: 0.75rem;
   cursor: pointer;
-  box-shadow: 0 2px 5px -2px #fff;
+  box-shadow: 0 2px 5px -2px ${(props) => props.theme.colors.text};
 
-  @media (min-width: 768px) {
+  @media ${(props) => props.theme.device.tablet} {
     padding: 0.6rem 2rem;
     font-size: 1rem;
     font-weight: 700;
 
     &:hover {
-      background-image: radial-gradient(
-        70% 120%,
-        #f4bc00 6%,
-        #f4bc00 1%,
-        #cc3332 79%
-      );
+      ${Styled.buttonHover}
       border-radius: 5px;
     }
   }
 `
 
 const NavLink = styled(Link)`
-  color: #fff;
+  color: ${(props) => props.theme.colors.text};
   text-decoration: none;
   margin: 0.2rem 0.7rem;
   font-size: 0.75rem;
   cursor: pointer;
 
-  @media (min-width: 768px) {
+  @media ${(props) => props.theme.device.tablet} {
     margin: 0.6rem 2rem;
     font-size: 1rem;
   }

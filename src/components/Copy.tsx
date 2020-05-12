@@ -1,18 +1,17 @@
 import React from 'react'
 import CopyPanel from './CopyPanel'
+import { CopyDataProps } from '../models/Props'
 
 import styled from 'styled-components'
+import * as Styled from '../components/styled'
 
-interface CharacterDataProps {
-  characterData: { thumbnail: { path: string; extension: string } }
-}
+const Copy: React.FC<CopyDataProps> = (props: CopyDataProps) => {
+  const { thumbnail } = props.characterData
 
-const Copy: React.FC<CharacterDataProps> = (props: CharacterDataProps) => {
-  const imgSrcPath: string =
-    props.characterData.thumbnail && props.characterData.thumbnail.path
-  const imgSrcExtension: string =
-    props.characterData.thumbnail && props.characterData.thumbnail.extension
+  const imgSrcPath: string = thumbnail && thumbnail.path
+  const imgSrcExtension: string = thumbnail && thumbnail.extension
   const imgSrc: string = `${imgSrcPath}.${imgSrcExtension}`
+
   return (
     <CopyWrapper className="copy-wrapper">
       <HeadingWrapper className="text-wrapper heading">
@@ -37,11 +36,11 @@ const CopyWrapper = styled('div')`
     width: 100%;
   }
 
-  @media (min-width: 768px) {
+  @media ${(props) => props.theme.device.tablet} {
     padding: 0 3rem;
   }
 
-  @media (min-width: 1024px) {
+  @media ${(props) => props.theme.device.laptop} {
     padding: 0 1.2rem;
   }
 `
@@ -55,7 +54,7 @@ const HeadingWrapper = styled('div')`
     line-height: 2.2rem;
   }
 
-  @media (min-width: 768px) {
+  @media ${(props) => props.theme.device.tablet} {
     p {
       font-size: 2rem;
     }
@@ -63,19 +62,17 @@ const HeadingWrapper = styled('div')`
 `
 
 const CopyContentWrapper = styled('div')`
-  @media (min-width: 1024px) {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  @media ${(props) => props.theme.device.laptop} {
+    ${Styled.flexbox('row', 'center', 'flex-start')}
   }
 `
 
 const ImageWrapper = styled('div')`
-  @media (min-width: 768px) {
+  @media ${(props) => props.theme.device.tablet} {
     padding: 0 0 2rem 0;
   }
 
-  @media (min-width: 1024px) {
+  @media ${(props) => props.theme.device.laptop} {
     flex: 0 1 35%;
     padding: 0 5rem 0 0;
   }

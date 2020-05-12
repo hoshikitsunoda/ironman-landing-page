@@ -16,3 +16,11 @@ export interface ComicsProps {
   }[]
   title: string
 }
+
+export interface CopyDataProps {
+  characterData: { thumbnail: { path: string; extension: string } }
+}
+
+export interface HeroDataProps {
+  characterData: { description: string }
+}

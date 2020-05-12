@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 // Global
 
@@ -40,15 +40,40 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 const size = {
-  mobileS: '350px',
-  tabletS: '768px',
-  tabletL: '1024px',
-  laptop: '1200px',
+  mobile: '350px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopL: '1200px',
 }
 
-export const Device = {
-  mobileS: size.mobileS,
-  tabletS: size.tabletS,
-  tabletL: size.tabletL,
-  laptop: size.laptop,
+export const theme = {
+  colors: {
+    primary: '#f4bc00',
+    secondary: '#cc3332',
+    text: '#fff',
+    secondaryText: '#808080',
+  },
+  device: {
+    mobile: `(min-width: ${size.mobile})`,
+    tablet: `(min-width: ${size.tablet})`,
+    laptop: `(min-width: ${size.laptop})`,
+    laptopL: `(min-width: ${size.laptopL})`,
+  },
+}
+
+export const buttonHover = css`
+  background-image: radial-gradient(
+    70% 120%,
+    ${(props) => props.theme.colors.primary} 6%,
+    ${(props) => props.theme.colors.primary} 1%,
+    ${(props) => props.theme.colors.secondary} 79%
+  );
+`
+export function flexbox($direction: string, $justify: string, $align: string) {
+  return `
+    display: flex;
+    flex-direction: ${$direction};
+    justify-content: ${$justify};
+    align-items: ${$align};
+  `
 }
