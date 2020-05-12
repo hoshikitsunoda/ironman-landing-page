@@ -54,21 +54,21 @@ const ContentWrapper = styled('div')`
   .left {
     order: 1;
     p {
-      color: #fff;
+      color: ${(props) => props.theme.colors.text};
       text-align: center;
       margin-bottom: 1rem;
     }
 
     button {
       display: block;
-      background-color: #f4bc00;
+      background-color: ${(props) => props.theme.colors.primary};
       margin: 0 auto;
       padding: 0.8rem 3.8rem;
-      color: #fff;
+      color: ${(props) => props.theme.colors.text};
       border-radius: 0.2rem;
       font-size: 0.9375rem;
       border: none;
-      box-shadow: 0 2px 5px -2px #fff;
+      box-shadow: 0 2px 5px -2px ${(props) => props.theme.colors.text};
       cursor: pointer;
     }
   }

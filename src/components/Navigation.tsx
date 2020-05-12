@@ -59,14 +59,14 @@ const LinkWrapper = styled('div')`
 `
 
 const Button = styled(Link)`
-  background-color: #f4bc00;
-  color: #fff;
+  background-color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.text};
   text-decoration: none;
   border-radius: 0.2rem;
   padding: 0.2rem 0.7rem;
   font-size: 0.75rem;
   cursor: pointer;
-  box-shadow: 0 2px 5px -2px #fff;
+  box-shadow: 0 2px 5px -2px ${(props) => props.theme.colors.text};
 
   @media ${Styled.Device.tablet} {
     padding: 0.6rem 2rem;
@@ -81,7 +81,7 @@ const Button = styled(Link)`
 `
 
 const NavLink = styled(Link)`
-  color: #fff;
+  color: ${(props) => props.theme.colors.text};
   text-decoration: none;
   margin: 0.2rem 0.7rem;
   font-size: 0.75rem;

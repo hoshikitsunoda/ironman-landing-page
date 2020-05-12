@@ -45,7 +45,7 @@ const PanelContainer = styled('div')`
   }
 
   p {
-    color: #808080;
+    color: ${(props) => props.theme.colors.secondaryText};
     font-size: 0.875rem;
   }
 
@@ -70,7 +70,7 @@ const PanelContainer = styled('div')`
     }
 
     p {
-      color: #808080;
+      color: ${(props) => props.theme.colors.secondaryText};
       font-size: 1rem;
     }
   }
