@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios, { AxiosResponse } from 'axios'
 import fetchData from './utils/api'
 
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 
 import Hero from './components/Hero'
 import Copy from './components/Copy'
@@ -57,12 +57,14 @@ const App: React.FC<{
   }, [])
 
   return (
-    <AppWrapper className="App">
-      <Styled.GlobalStyle />
-      <Hero characterData={data.characterData} />
-      <Copy characterData={data.characterData} />
-      <ComicSlider comicsData={data.comicsData} />
-    </AppWrapper>
+    <ThemeProvider theme={Styled.theme}>
+      <AppWrapper className="App">
+        <Styled.GlobalStyle />
+        <Hero characterData={data.characterData} />
+        <Copy characterData={data.characterData} />
+        <ComicSlider comicsData={data.comicsData} />
+      </AppWrapper>
+    </ThemeProvider>
   )
 }
 
