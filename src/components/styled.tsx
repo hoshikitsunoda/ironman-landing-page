@@ -46,19 +46,18 @@ const size = {
   laptopL: '1200px',
 }
 
-export const Device = {
-  mobile: `(min-width: ${size.mobile})`,
-  tablet: `(min-width: ${size.tablet})`,
-  laptop: `(min-width: ${size.laptop})`,
-  laptopL: `(min-width: ${size.laptopL})`,
-}
-
 export const theme = {
   colors: {
     primary: '#f4bc00',
     secondary: '#cc3332',
     text: '#fff',
     secondaryText: '#808080',
+  },
+  device: {
+    mobile: `(min-width: ${size.mobile})`,
+    tablet: `(min-width: ${size.tablet})`,
+    laptop: `(min-width: ${size.laptop})`,
+    laptopL: `(min-width: ${size.laptopL})`,
   },
 }
 
