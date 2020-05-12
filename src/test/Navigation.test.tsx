@@ -1,7 +1,5 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { createMemoryHistory } from 'history'
-import { Router } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
 import * as Styled from '../components/styled'
@@ -9,12 +7,9 @@ import * as Styled from '../components/styled'
 import Navigation from '../components/Navigation'
 
 const renderNavigation = () => {
-  const history = createMemoryHistory()
   return (
     <ThemeProvider theme={Styled.theme}>
-      <Router history={history}>
-        <Navigation />
-      </Router>
+      <Navigation />
     </ThemeProvider>
   )
 }
@@ -23,7 +18,8 @@ describe('<Navigation />', () => {
   test('renders SVG', async () => {
     const { queryByTestId } = render(renderNavigation())
 
-    expect(queryByTestId('svg')).toBeTruthy()
+    const logo = queryByTestId('svg') as HTMLObjectElement
+    expect(logo).toBeTruthy()
   })
 })
 
