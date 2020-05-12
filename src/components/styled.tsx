@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 // Global
 
@@ -51,4 +51,21 @@ export const Device = {
   tablet: `(min-width: ${size.tablet})`,
   laptop: `(min-width: ${size.laptop})`,
   laptopL: `(min-width: ${size.laptopL})`,
+}
+
+export const buttonHover = css`
+  background-image: radial-gradient(
+    70% 120%,
+    #f4bc00 6%,
+    #f4bc00 1%,
+    #cc3332 79%
+  );
+`
+export function flexbox($direction: string, $justify: string, $align: string) {
+  return `
+    display: flex;
+    flex-direction: ${$direction};
+    justify-content: ${$justify};
+    align-items: ${$align};
+  `
 }
