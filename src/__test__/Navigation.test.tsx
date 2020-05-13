@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import Navigation from '../components/Navigation'
 
 describe('<Navigation />', () => {
-  const wrapper = shallow(<Navigation />)
+  // const wrapper = shallow(<Navigation />)
   it('Renders Navigation', () => {
     const nav = shallow(<Navigation />)
     expect(nav).toMatchSnapshot()
