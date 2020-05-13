@@ -12,7 +12,7 @@ const Navigation: React.FC = () => {
       <LogoWrapper className="logo-wrapper">
         <Logo />
       </LogoWrapper>
-      <LinkWrapper className="linkWrapper">
+      <LinkWrapper className="link-wrapper">
         <Router>
           <NavLink to="/signin">Sign In</NavLink>
           <Button to="/signup">Sign Up</Button>
