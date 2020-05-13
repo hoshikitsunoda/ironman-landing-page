@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { mount, ReactWrapper } from 'enzyme'
 import CopyPanel from '../components/CopyPanel'
 import { panelData } from '../data/seed'
 
@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components'
 import * as Styled from '../components/styled'
 
 describe('<CopyPanel />', () => {
-  let wrapper: any
+  let wrapper: ReactWrapper
   beforeEach(() => {
     wrapper = mount(
       <ThemeProvider theme={Styled.theme}>
