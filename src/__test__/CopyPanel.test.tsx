@@ -24,7 +24,7 @@ describe('<CopyPanel />', () => {
     expect(wrapper.find('.panel').hostNodes()).toHaveLength(4)
   })
 
-  it('should have correspinding image source', () => {
+  it('should have corresponding image source', () => {
     const imgSrc = wrapper.find('img').map((item) => item.prop('src'))
     expect(imgSrc).toEqual(
       Object.keys(panelData).map(
@@ -33,7 +33,7 @@ describe('<CopyPanel />', () => {
     )
   })
 
-  it('should have correspinding headers', () => {
+  it('should have corresponding headers', () => {
     const texts = wrapper.find('h4').map((node) => node.text())
     expect(texts).toEqual(
       Object.keys(panelData).map(
@@ -42,7 +42,7 @@ describe('<CopyPanel />', () => {
     )
   })
 
-  it('should have correspinding headers', () => {
+  it('should have corresponding headers', () => {
     const texts = wrapper.find('p').map((node) => node.text())
     expect(texts).toEqual(
       Object.keys(panelData).map(
