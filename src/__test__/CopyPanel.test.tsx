@@ -7,11 +7,14 @@ import { ThemeProvider } from 'styled-components'
 import * as Styled from '../components/styled'
 
 describe('<CopyPanel />', () => {
-  const wrapper = mount(
-    <ThemeProvider theme={Styled.theme}>
-      <CopyPanel />
-    </ThemeProvider>
-  )
+  let wrapper: any
+  beforeEach(() => {
+    wrapper = mount(
+      <ThemeProvider theme={Styled.theme}>
+        <CopyPanel />
+      </ThemeProvider>
+    )
+  })
 
   it('should render component', () => {
     expect(wrapper).toMatchSnapshot()
