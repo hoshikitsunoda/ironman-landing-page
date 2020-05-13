@@ -1,45 +1,31 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import Navigation from '../components/Navigation'
+import Logo from '../components/Logo'
+
+import { ThemeProvider } from 'styled-components'
+import * as Styled from '../components/styled'
 
 describe('<Navigation />', () => {
-  // const wrapper = shallow(<Navigation />)
-  it('Renders Navigation', () => {
-    const nav = shallow(<Navigation />)
-    expect(nav).toMatchSnapshot()
+  const wrapper = mount(
+    <ThemeProvider theme={Styled.theme}>
+      <Navigation />
+    </ThemeProvider>
+  )
+  it('should render component', () => {
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('should render Logo', () => {
+    expect(wrapper.find(Logo)).toHaveLength(1)
+  })
+
+  it('should render two Links', () => {
+    expect(wrapper.find('Link')).toHaveLength(2)
+  })
+
+  it('should have corresponding href', () => {
+    expect(wrapper.find('Link').first().props().to).toEqual('/signin')
+    expect(wrapper.find('Link').last().props().to).toEqual('/signup')
   })
 })
-// import { render } from '@testing-library/react'
-// import { ThemeProvider } from 'styled-components'
-
-// import * as Styled from '../components/styled'
-
-// import Navigation from '../components/Navigation'
-
-// const renderNavigation = () => {
-//   return (
-//     <ThemeProvider theme={Styled.theme}>
-//       <Navigation />
-//     </ThemeProvider>
-//   )
-// }
-
-// describe('<Navigation />', () => {
-//   test('renders SVG', async () => {
-//     const { queryByTestId } = render(renderNavigation())
-
-//     const logo = queryByTestId('svg') as HTMLObjectElement
-//     expect(logo).toBeTruthy()
-//   })
-// })
-
-// describe('<Navigation />', () => {
-//   test('checks both links have correct href', async () => {
-//     const { getByText } = render(renderNavigation())
-
-//     const signIn = getByText('Sign In').closest('a') as HTMLAnchorElement
-//     const signUp = getByText('Sign Up').closest('a') as HTMLAnchorElement
-//     expect(signIn.href).toMatch('/signin')
-//     expect(signUp.href).toMatch('/signup')
-//   })
-// })
