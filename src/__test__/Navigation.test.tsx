@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { mount, ReactWrapper } from 'enzyme'
 import Navigation from '../components/Navigation'
 import Logo from '../components/Logo'
 
@@ -7,11 +7,14 @@ import { ThemeProvider } from 'styled-components'
 import * as Styled from '../components/styled'
 
 describe('<Navigation />', () => {
-  const wrapper = mount(
-    <ThemeProvider theme={Styled.theme}>
-      <Navigation />
-    </ThemeProvider>
-  )
+  let wrapper: ReactWrapper
+  beforeEach(() => {
+    wrapper = mount(
+      <ThemeProvider theme={Styled.theme}>
+        <Navigation />
+      </ThemeProvider>
+    )
+  })
   it('should render component', () => {
     expect(wrapper).toMatchSnapshot()
   })
