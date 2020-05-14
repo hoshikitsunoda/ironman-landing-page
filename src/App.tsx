@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios, { AxiosResponse, AxiosError } from 'axios'
 import fetchData from './utils/api'
+import { urlCharacter, urlComics, paramsSetting } from './data/api'
 
 import styled, { ThemeProvider } from 'styled-components'
 
@@ -42,7 +43,7 @@ const App: React.FC<{
   })
 
   useEffect(() => {
-    fetchData()
+    fetchData([urlCharacter, urlComics], paramsSetting)
       .then(
         axios.spread((...responses: AxiosResponse[]) => {
           if (responses != null) {
