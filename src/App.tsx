@@ -6,9 +6,9 @@ import { characterObject, comicsObject } from './data/variables'
 
 import styled, { ThemeProvider } from 'styled-components'
 
-import Hero from './components/Hero'
-import Copy from './components/Copy'
-import ComicSlider from './components/ComicSlider'
+import Hero from './containers/Hero/Hero'
+import Copy from './containers/Copy/Copy'
+import ComicSlider from './containers/ComicSlider/ComicSlider'
 import { CharacterProps, ComicsProps } from './models/Props'
 
 import * as Styled from './components/styled'

@@ -1,10 +1,10 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
 import CopyPanel from './CopyPanel'
-import { panelData } from '../data/seed'
+import { panelData } from '../../data/seed'
 
 import { ThemeProvider } from 'styled-components'
-import * as Styled from './styled'
+import * as Styled from '../styled'
 
 describe('<CopyPanel />', () => {
   let wrapper: ReactWrapper

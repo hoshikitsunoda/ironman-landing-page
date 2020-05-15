@@ -3,7 +3,7 @@ import { mount, ReactWrapper } from 'enzyme'
 import ComicSlider from './ComicSlider'
 
 import { ThemeProvider } from 'styled-components'
-import * as Styled from './styled'
+import * as Styled from '../../components/styled'
 
 describe('<ComicSlider />', () => {
   const comicSliderProps = {

@@ -1,8 +1,8 @@
 import React from 'react'
-import { panelData } from '../data/seed'
+import { panelData } from '../../data/seed'
 
 import styled from 'styled-components'
-import * as Styled from '../components/styled'
+import * as Styled from '../../components/styled'
 
 const CopyPanel: React.FC = () => {
   return (

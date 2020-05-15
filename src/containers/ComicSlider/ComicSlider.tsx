@@ -1,6 +1,10 @@
 import React from 'react'
 import Slider from 'react-slick'
-import { Comics, ComicsDataProps, SliderSetting } from '../models/ComicSlider'
+import {
+  Comics,
+  ComicsDataProps,
+  SliderSetting,
+} from '../../models/ComicSlider'
 
 import styled from 'styled-components'
 

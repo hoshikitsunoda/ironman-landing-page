@@ -2,9 +2,9 @@ import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
 
 import App from './App'
-import Hero from './components/Hero'
-import Copy from './components/Copy'
-import ComicSlider from './components/ComicSlider'
+import Hero from './containers/Hero/Hero'
+import Copy from './containers/Copy/Copy'
+import ComicSlider from './containers/ComicSlider/ComicSlider'
 
 import { characterObject, comicsObject } from './data/variables'
 

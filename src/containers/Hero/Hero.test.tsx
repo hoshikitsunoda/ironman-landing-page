@@ -1,11 +1,11 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
 import Hero from './Hero'
-import Navigation from './Navigation'
+import Navigation from '../../components/Navigation/Navigation'
 
 import { ThemeProvider } from 'styled-components'
-import * as Styled from './styled'
-import ironManCartoon from '../images/Iron-man-Cartoon.png'
+import * as Styled from '../../components/styled'
+import ironManCartoon from '../../images/Iron-man-Cartoon.png'
 
 describe('<Hero />', () => {
   const heroProps = {
