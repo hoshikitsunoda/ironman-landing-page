@@ -1,0 +1,18 @@
+{
+  "comicsData": [
+    {
+      "images": [
+        {
+          "path": "ironman",
+          "extension": "jpg"
+        }
+      ],
+      "urls": [
+        {
+          "url": "marvel.com/ironman"
+        }
+      ],
+      "title": "First Issue"
+    }
+  ]
+}

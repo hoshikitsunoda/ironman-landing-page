@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import axios, { AxiosResponse, AxiosError } from 'axios'
 import fetchData from './utils/api'
+import { urlCharacter, urlComics, paramsSetting } from './data/api'
+import { characterObject, comicsObject } from './data/variables'
 
 import styled, { ThemeProvider } from 'styled-components'
 
-import Hero from './components/Hero'
-import Copy from './components/Copy'
-import ComicSlider from './components/ComicSlider'
+import Hero from './containers/Hero/Hero'
+import Copy from './containers/Copy/Copy'
+import ComicSlider from './containers/ComicSlider/ComicSlider'
 import { CharacterProps, ComicsProps } from './models/Props'
 
 import * as Styled from './components/styled'
@@ -14,35 +16,14 @@ import * as Styled from './components/styled'
 const App: React.FC<{
   initialChara?: CharacterProps
   initialComics?: ComicsProps[]
-}> = ({
-  initialChara = {
-    description: '',
-    thumbnail: { path: '', extension: '' },
-  },
-  initialComics = [
-    {
-      images: [
-        {
-          path: '',
-          extension: '',
-        },
-      ],
-      urls: [
-        {
-          url: '',
-        },
-      ],
-      title: '',
-    },
-  ],
-}) => {
+}> = ({ initialChara = characterObject, initialComics = comicsObject }) => {
   const [data, setData] = useState({
     characterData: initialChara,
     comicsData: initialComics,
   })
 
   useEffect(() => {
-    fetchData()
+    fetchData([urlCharacter, urlComics], paramsSetting)
       .then(
         axios.spread((...responses: AxiosResponse[]) => {
           if (responses != null) {

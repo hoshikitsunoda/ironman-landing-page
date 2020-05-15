@@ -2,9 +2,9 @@ import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 import styled from 'styled-components'
-import * as Styled from '../components/styled'
+import * as Styled from '../../components/styled'
 
-import Logo from './Logo'
+import Logo from '../Logo'
 
 const Navigation: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Navigation: React.FC = () => {
       <LogoWrapper className="logo-wrapper">
         <Logo />
       </LogoWrapper>
-      <LinkWrapper className="linkWrapper">
+      <LinkWrapper className="link-wrapper">
         <Router>
           <NavLink to="/signin">Sign In</NavLink>
           <Button to="/signup">Sign Up</Button>

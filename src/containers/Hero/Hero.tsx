@@ -1,12 +1,12 @@
 import React from 'react'
-import Navigation from './Navigation'
-import { HeroDataProps } from '../models/Props'
+import Navigation from '../../components/Navigation/Navigation'
+import { HeroDataProps } from '../../models/Props'
 
 import styled from 'styled-components'
-import * as Styled from '../components/styled'
+import * as Styled from '../../components/styled'
 
-import heroBackGround from '../images/background.png'
-import ironManCartoon from '../images/Iron-man-Cartoon.png'
+import heroBackGround from '../../images/background.png'
+import ironManCartoon from '../../images/Iron-man-Cartoon.png'
 
 const Hero: React.FC<HeroDataProps> = (props: HeroDataProps) => {
   return (

@@ -1,14 +1,14 @@
 import React from 'react'
-import { panelData } from '../data/seed'
+import { panelData } from '../../data/seed'
 
 import styled from 'styled-components'
-import * as Styled from '../components/styled'
+import * as Styled from '../../components/styled'
 
 const CopyPanel: React.FC = () => {
   return (
     <PanelWrapper className="copy-panel">
       {Object.keys(panelData).map((key: string, i: number) => (
-        <PanelContainer key={i}>
+        <PanelContainer className="panel" key={i}>
           <img src={panelData[key].icon} alt={key} />
           <h4>{panelData[key].heading}</h4>
           <p>{panelData[key].body}</p>

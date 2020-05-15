@@ -1,6 +1,10 @@
 import React from 'react'
 import Slider from 'react-slick'
-import { Comics, ComicsDataProps, SliderSetting } from '../models/ComicSlider'
+import {
+  Comics,
+  ComicsDataProps,
+  SliderSetting,
+} from '../../models/ComicSlider'
 
 import styled from 'styled-components'
 
@@ -24,7 +28,7 @@ const ComicSlider: React.FC<ComicsDataProps> = (props: ComicsDataProps) => {
   }
 
   return (
-    <StyledSlider {...settings}>
+    <StyledSlider className="slider" {...settings}>
       {props.comicsData.map((item, i: number) => {
         const comic = new Comics(
           `${item && item.images[0].path}.${item && item.images[0].extension}`,
@@ -33,7 +37,7 @@ const ComicSlider: React.FC<ComicsDataProps> = (props: ComicsDataProps) => {
         )
 
         return (
-          <div key={i}>
+          <div className="comic" key={i}>
             <a href={comic.comicLink} rel="noopener noreferrer" target="_blank">
               <img src={comic.comicImage} alt={`${comic.comicTitle}`} />
             </a>

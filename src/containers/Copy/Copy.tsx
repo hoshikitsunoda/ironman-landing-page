@@ -1,9 +1,9 @@
 import React from 'react'
-import CopyPanel from './CopyPanel'
-import { CopyDataProps } from '../models/Props'
+import CopyPanel from '../../components/CopyPanel/CopyPanel'
+import { CopyDataProps } from '../../models/Props'
 
 import styled from 'styled-components'
-import * as Styled from '../components/styled'
+import * as Styled from '../../components/styled'
 
 const Copy: React.FC<CopyDataProps> = (props: CopyDataProps) => {
   const { thumbnail } = props.characterData
