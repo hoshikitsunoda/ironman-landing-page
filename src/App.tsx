@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios, { AxiosResponse, AxiosError } from 'axios'
 import fetchData from './utils/api'
 import { urlCharacter, urlComics, paramsSetting } from './data/api'
+import { characterObject, comicsObject } from './data/variables'
 
 import styled, { ThemeProvider } from 'styled-components'
 
@@ -15,28 +16,7 @@ import * as Styled from './components/styled'
 const App: React.FC<{
   initialChara?: CharacterProps
   initialComics?: ComicsProps[]
-}> = ({
-  initialChara = {
-    description: '',
-    thumbnail: { path: '', extension: '' },
-  },
-  initialComics = [
-    {
-      images: [
-        {
-          path: '',
-          extension: '',
-        },
-      ],
-      urls: [
-        {
-          url: '',
-        },
-      ],
-      title: '',
-    },
-  ],
-}) => {
+}> = ({ initialChara = characterObject, initialComics = comicsObject }) => {
   const [data, setData] = useState({
     characterData: initialChara,
     comicsData: initialComics,
