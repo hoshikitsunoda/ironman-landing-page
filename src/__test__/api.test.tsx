@@ -1,33 +1,12 @@
 import axios from 'axios'
 import fetchData from '../utils/api'
 import { urlCharacter, urlComics, paramsSetting } from '../data/api'
+import { characterObject, comicsObject } from '../data/variables'
 
 jest.mock('axios')
 
 describe('fetchData', () => {
-  const data = [
-    {
-      description: '',
-      thumbnail: { path: '', extension: '' },
-    },
-    [
-      {
-        images: [
-          {
-            path: '',
-            extension: '',
-          },
-        ],
-        urls: [
-          {
-            url: '',
-          },
-        ],
-        title: '',
-      },
-    ],
-  ]
-  // const errorMessage = 'Failed to get data'
+  const data = [characterObject, comicsObject]
   const mockedAxios = axios as jest.Mocked<typeof axios>
 
   it('should call get twice', async () => {
@@ -51,5 +30,17 @@ describe('fetchData', () => {
     await expect(
       fetchData([urlCharacter, urlComics], paramsSetting)
     ).resolves.toEqual(data)
+  })
+
+  it('should fetch erroneously data from an API', async () => {
+    const errorMessage = 'Failed to get data'
+
+    mockedAxios.all.mockImplementationOnce(() =>
+      Promise.reject(new Error(errorMessage))
+    )
+
+    await expect(
+      fetchData([urlCharacter, urlComics], paramsSetting)
+    ).rejects.toThrow(errorMessage)
   })
 })
