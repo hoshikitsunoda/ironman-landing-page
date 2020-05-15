@@ -1,5 +1,5 @@
 import axios from 'axios'
-import fetchData from '../utils/api'
+import fetchData from './api'
 import { urlCharacter, urlComics, paramsSetting } from '../data/api'
 import { characterObject, comicsObject } from '../data/variables'
 

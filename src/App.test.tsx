@@ -1,15 +1,15 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
 
-import App from '../App'
-import Hero from '../components/Hero'
-import Copy from '../components/Copy'
-import ComicSlider from '../components/ComicSlider'
+import App from './App'
+import Hero from './components/Hero'
+import Copy from './components/Copy'
+import ComicSlider from './components/ComicSlider'
 
-import { characterObject, comicsObject } from '../data/variables'
+import { characterObject, comicsObject } from './data/variables'
 
 import { ThemeProvider } from 'styled-components'
-import * as Styled from '../components/styled'
+import * as Styled from './components/styled'
 
 jest.mock('axios')
 

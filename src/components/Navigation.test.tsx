@@ -1,10 +1,10 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
-import Navigation from '../components/Navigation'
-import Logo from '../components/Logo'
+import Navigation from './Navigation'
+import Logo from './Logo'
 
 import { ThemeProvider } from 'styled-components'
-import * as Styled from '../components/styled'
+import * as Styled from './styled'
 
 describe('<Navigation />', () => {
   let wrapper: ReactWrapper

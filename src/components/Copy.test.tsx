@@ -1,10 +1,10 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
-import Copy from '../components/Copy'
-import CopyPanel from '../components/CopyPanel'
+import Copy from './Copy'
+import CopyPanel from './CopyPanel'
 
 import { ThemeProvider } from 'styled-components'
-import * as Styled from '../components/styled'
+import * as Styled from './styled'
 
 describe('<Copy />', () => {
   const copyProps = {
