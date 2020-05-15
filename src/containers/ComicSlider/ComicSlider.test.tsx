@@ -1,35 +1,18 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
 import ComicSlider from './ComicSlider'
+import comicSliderObj from '../../__test__/mocks/comicSlider-mock.json'
 
 import { ThemeProvider } from 'styled-components'
 import * as Styled from '../../components/styled'
 
 describe('<ComicSlider />', () => {
-  const comicSliderProps = {
-    comicsData: [
-      {
-        images: [
-          {
-            path: 'ironman',
-            extension: 'jpg',
-          },
-        ],
-        urls: [
-          {
-            url: 'marvel.com/ironman',
-          },
-        ],
-        title: 'First Issue',
-      },
-    ],
-  }
-  const { images, urls, title } = comicSliderProps.comicsData[0]
+  const { images, urls, title } = comicSliderObj.comicsData[0]
   let wrapper: ReactWrapper
   beforeEach(() => {
     wrapper = mount(
       <ThemeProvider theme={Styled.theme}>
-        <ComicSlider {...comicSliderProps} />
+        <ComicSlider {...comicSliderObj} />
       </ThemeProvider>
     )
   })
