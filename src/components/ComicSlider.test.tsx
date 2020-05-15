@@ -1,9 +1,9 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
-import ComicSlider from '../components/ComicSlider'
+import ComicSlider from './ComicSlider'
 
 import { ThemeProvider } from 'styled-components'
-import * as Styled from '../components/styled'
+import * as Styled from './styled'
 
 describe('<ComicSlider />', () => {
   const comicSliderProps = {
