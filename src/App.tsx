@@ -9,16 +9,16 @@ import styled, { ThemeProvider } from 'styled-components'
 import Hero from './containers/Hero/Hero'
 import Copy from './containers/Copy/Copy'
 import ComicSlider from './containers/ComicSlider/ComicSlider'
-import { CharacterProps, ComicsProps } from './models/Props'
+import { AppProps } from './models/Props'
 
 import * as Styled from './components/styled'
 
-const App: React.FC<{
-  initialChara?: CharacterProps
-  initialComics?: ComicsProps[]
-}> = ({ initialChara = characterObject, initialComics = comicsObject }) => {
+const App: React.FC<AppProps> = ({
+  initialCharacter = characterObject,
+  initialComics = comicsObject,
+}) => {
   const [data, setData] = useState({
-    characterData: initialChara,
+    characterData: initialCharacter,
     comicsData: initialComics,
   })
 

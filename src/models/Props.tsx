@@ -17,6 +17,16 @@ export interface ComicsProps {
   title: string
 }
 
+export interface AppProps {
+  initialCharacter?: CharacterProps
+  initialComics?: ComicsProps[]
+}
+
+export enum ItemEnum {
+  CharacterProps,
+  ComicsProps,
+}
+
 export interface CopyDataProps {
   characterData: { thumbnail: { path: string; extension: string } }
 }
