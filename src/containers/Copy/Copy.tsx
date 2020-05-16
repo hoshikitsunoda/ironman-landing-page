@@ -5,9 +5,9 @@ import { CopyDataProps } from '../../models/Props'
 import styled from 'styled-components'
 import * as Styled from '../../components/styled'
 
-const Copy: React.FC<CopyDataProps> = (props: CopyDataProps) => {
-  const { thumbnail } = props.characterData
-
+const Copy: React.FC<CopyDataProps> = ({
+  characterData: { thumbnail },
+}: CopyDataProps) => {
   const imgSrcPath: string = thumbnail && thumbnail.path
   const imgSrcExtension: string = thumbnail && thumbnail.extension
   const imgSrc: string = `${imgSrcPath}.${imgSrcExtension}`
