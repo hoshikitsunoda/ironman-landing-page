@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-interface ShowPopupProps {
+interface ShowPopupStatus {
   isShowing: boolean
   togglePopup: () => void
 }
 
-type Hook = () => ShowPopupProps
+type Hook = () => ShowPopupStatus
 
 const ShowPopup: Hook = () => {
   const [isShowing, setIsShowing] = useState<boolean>(false)

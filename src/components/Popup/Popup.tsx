@@ -4,7 +4,12 @@ import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import * as Styled from '../../components/styled'
 
-const Popup = ({ isShowing, hide }: any) =>
+interface PopupProps {
+  isShowing: boolean
+  hide: () => void
+}
+
+const Popup: React.FC<PopupProps> = ({ isShowing, hide }: PopupProps) =>
   isShowing
     ? ReactDOM.createPortal(
         <React.Fragment>
