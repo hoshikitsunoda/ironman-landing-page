@@ -1,5 +1,7 @@
 import React from 'react'
 import Navigation from '../../components/Navigation/Navigation'
+import Popup from '../../components/Popup/Popup'
+import ShowPopup from '../../hooks/showPopup'
 import { HeroDataProps } from '../../models/Props'
 
 import styled from 'styled-components'
@@ -8,15 +10,17 @@ import * as Styled from '../../components/styled'
 import heroBackGround from '../../images/background.png'
 import ironManCartoon from '../../images/Iron-man-Cartoon.png'
 
-const Hero: React.FC<HeroDataProps> = (props: HeroDataProps) => {
+const Hero: React.FC<HeroDataProps> = ({ characterData }: HeroDataProps) => {
+  const { isShowing, togglePopup } = ShowPopup()
   return (
     <HeroWrapper className="hero-wrapper">
       <HeroContainer className="hero-container">
         <Navigation />
         <ContentWrapper className="hero-content-wrapper">
           <div className="left">
-            <p>{props.characterData.description}</p>
-            <button>Get Started</button>
+            <p>{characterData.description}</p>
+            <button onClick={togglePopup}>Get Started</button>
+            <Popup isShowing={isShowing} hide={togglePopup} />
           </div>
           <div className="right">
             <img src={ironManCartoon} alt="" />

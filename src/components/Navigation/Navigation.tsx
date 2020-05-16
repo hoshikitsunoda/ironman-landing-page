@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
+import Popup from '../../components/Popup/Popup'
+import ShowPopup from '../../hooks/showPopup'
 
 import styled from 'styled-components'
 import * as Styled from '../../components/styled'
@@ -7,6 +9,7 @@ import * as Styled from '../../components/styled'
 import Logo from '../Logo'
 
 const Navigation: React.FC = () => {
+  const { isShowing, togglePopup } = ShowPopup()
   return (
     <NavWrapper className="nav-wrapper">
       <LogoWrapper className="logo-wrapper">
@@ -14,8 +17,13 @@ const Navigation: React.FC = () => {
       </LogoWrapper>
       <LinkWrapper className="link-wrapper">
         <Router>
-          <NavLink to="/signin">Sign In</NavLink>
-          <Button to="/signup">Sign Up</Button>
+          <NavLink onClick={togglePopup} to="/signin">
+            Sign In
+          </NavLink>
+          <Button onClick={togglePopup} to="/signup">
+            Sign Up
+          </Button>
+          <Popup isShowing={isShowing} hide={togglePopup} />
         </Router>
       </LinkWrapper>
     </NavWrapper>
