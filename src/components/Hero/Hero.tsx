@@ -1,11 +1,12 @@
 import React from 'react'
-import Navigation from '../../components/Navigation/Navigation'
-import Popup from '../../components/Popup/Popup'
+import Navigation from '../Navigation/Navigation'
+import Popup from '../Popup/Popup'
 import ShowPopup from '../../hooks/showPopup'
 import { HeroDataProps } from '../../models/Props'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 import styled from 'styled-components'
-import * as Styled from '../../components/styled'
+import * as Styled from '../styled'
 
 import heroBackGround from '../../images/background.png'
 import ironManCartoon from '../../images/Iron-man-Cartoon.png'
@@ -19,7 +20,11 @@ const Hero: React.FC<HeroDataProps> = ({ characterData }: HeroDataProps) => {
         <ContentWrapper className="hero-content-wrapper">
           <div className="left">
             <p>{characterData.description}</p>
-            <button onClick={togglePopup}>Get Started</button>
+            <Router>
+              <Link to="/get-started">
+                <button onClick={togglePopup}>Get Started</button>
+              </Link>
+            </Router>
             <Popup isShowing={isShowing} hide={togglePopup} />
           </div>
           <div className="right">

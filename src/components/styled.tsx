@@ -37,6 +37,10 @@ export const GlobalStyle = createGlobalStyle`
   img {
     display: block;
   }
+
+  a {
+    text-decoration: none;
+  }
 `
 
 const size = {

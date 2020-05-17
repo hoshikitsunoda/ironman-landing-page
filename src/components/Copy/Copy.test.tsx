@@ -1,12 +1,12 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
 import Copy from './Copy'
-import CopyPanel from '../../components/CopyPanel/CopyPanel'
+import CopyPanel from '../CopyPanel/CopyPanel'
 import copyPropsMockObj from '../../__test__/mocks/copyProps-mock.json'
 import copyHeading from '../../__test__/mocks/copyHeading-mock.json'
 
 import { ThemeProvider } from 'styled-components'
-import * as Styled from '../../components/styled'
+import * as Styled from '../styled'
 
 describe('<Copy />', () => {
   const { path, extension } = copyPropsMockObj.characterData.thumbnail
