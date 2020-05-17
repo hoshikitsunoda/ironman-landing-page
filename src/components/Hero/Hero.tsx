@@ -79,11 +79,6 @@ const ContentWrapper = styled('div')`
       border: none;
       box-shadow: 0 2px 5px -2px ${(props) => props.theme.colors.text};
       cursor: pointer;
-
-      a {
-        color: ${(props) => props.theme.colors.text};
-        text-decoration: none;
-      }
     }
   }
 
