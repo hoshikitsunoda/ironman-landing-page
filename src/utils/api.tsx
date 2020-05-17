@@ -1,10 +1,9 @@
 import axios, { AxiosResponse } from 'axios'
 import { CharacterProps, ComicsProps } from '../models/Props'
 
-const fetchData = async (
-  urls: string[],
-  paramSetting: {}
-): Promise<AxiosResponse<{}>[]> => {
+type Fetch = (urls: string[], paramSetting: {}) => Promise<AxiosResponse<{}>[]>
+
+const fetchData: Fetch = async (urls: string[], paramSetting: {}) => {
   let charaResult: Promise<AxiosResponse<CharacterProps>> = axios.get<
     CharacterProps
   >(urls[0], paramSetting)

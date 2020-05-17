@@ -1,7 +1,14 @@
 import { useState } from 'react'
 
-const ShowPopup = () => {
-  const [isShowing, setIsShowing] = useState(false)
+interface ShowPopupStatus {
+  isShowing: boolean
+  togglePopup: () => void
+}
+
+type Hook = () => ShowPopupStatus
+
+const ShowPopup: Hook = () => {
+  const [isShowing, setIsShowing] = useState<boolean>(false)
 
   const togglePopup = () => {
     setIsShowing(!isShowing)

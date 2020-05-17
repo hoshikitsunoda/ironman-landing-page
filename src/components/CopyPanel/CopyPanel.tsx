@@ -1,10 +1,11 @@
 import React from 'react'
 import { panelData } from '../../data/seed'
+import { PanelItem } from '../../models/CopyPanel'
 
 import styled from 'styled-components'
 import * as Styled from '../../components/styled'
 
-const CopyPanel: React.FC = () => {
+const CopyPanel: React.FC<PanelItem> = () => {
   return (
     <PanelWrapper className="copy-panel">
       {Object.keys(panelData).map((key: string, i: number) => (
