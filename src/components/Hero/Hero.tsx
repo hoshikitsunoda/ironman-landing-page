@@ -24,8 +24,8 @@ const Hero: React.FC<HeroDataProps> = ({ characterData }: HeroDataProps) => {
               <Link to="/get-started">
                 <button onClick={togglePopup}>Get Started</button>
               </Link>
+              <Popup isShowing={isShowing} hide={togglePopup} />
             </Router>
-            <Popup isShowing={isShowing} hide={togglePopup} />
           </div>
           <div className="right">
             <img src={ironManCartoon} alt="" />
