@@ -46,6 +46,6 @@ describe('<Popup />', () => {
     )
     component.find('button').simulate('click')
     wrapper.update()
-    expect(onClickMock.mock.calls.length).toEqual(1)
+    expect(onClickMock).toBeCalledTimes(1)
   })
 })
