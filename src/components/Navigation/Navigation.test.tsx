@@ -2,6 +2,7 @@ import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
 import Navigation from './Navigation'
 import Logo from '../Logo'
+import Popup from '../Popup/Popup'
 
 import { ThemeProvider } from 'styled-components'
 import * as Styled from '../../components/styled'
@@ -30,5 +31,9 @@ describe('<Navigation />', () => {
   it('should have corresponding href', () => {
     expect(wrapper.find('Link').first().props().to).toEqual('/signin')
     expect(wrapper.find('Link').last().props().to).toEqual('/signup')
+  })
+
+  it('should render Popup with correct props', () => {
+    expect(wrapper.find(Popup)).toHaveLength(1)
   })
 })
