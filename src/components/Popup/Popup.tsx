@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { useHistory } from 'react-router-dom'
 
 import styled from 'styled-components'
 import * as Styled from '../../components/styled'
@@ -9,15 +10,23 @@ interface PopupProps {
   hide: () => void
 }
 
-const Popup: React.FC<PopupProps> = ({ isShowing, hide }: PopupProps) =>
-  isShowing
+const Popup: React.FC<PopupProps> = ({ isShowing, hide }: PopupProps) => {
+  const history = useHistory()
+  return isShowing
     ? ReactDOM.createPortal(
         <React.Fragment>
           <Overlay className="popup-overlay" />
           <Wrapper className="popup-wrapper">
             <PopupBox className="popup">
               <div className="popup-header">
-                <button type="button" className="popup-close" onClick={hide}>
+                <button
+                  type="button"
+                  className="popup-close"
+                  onClick={() => {
+                    hide()
+                    history.goBack()
+                  }}
+                >
                   <span>&times;</span>
                 </button>
               </div>
@@ -28,6 +37,7 @@ const Popup: React.FC<PopupProps> = ({ isShowing, hide }: PopupProps) =>
         document.body
       )
     : null
+}
 
 const Overlay = styled('div')`
   position: fixed;
