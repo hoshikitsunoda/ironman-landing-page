@@ -24,8 +24,8 @@ const Hero: React.FC<HeroDataProps> = ({ characterData }: HeroDataProps) => {
               <Link to="/get-started">
                 <button onClick={togglePopup}>Get Started</button>
               </Link>
+              <Popup isShowing={isShowing} hide={togglePopup} />
             </Router>
-            <Popup isShowing={isShowing} hide={togglePopup} />
           </div>
           <div className="right">
             <img src={ironManCartoon} alt="" />
@@ -79,6 +79,11 @@ const ContentWrapper = styled('div')`
       border: none;
       box-shadow: 0 2px 5px -2px ${(props) => props.theme.colors.text};
       cursor: pointer;
+
+      a {
+        color: ${(props) => props.theme.colors.text};
+        text-decoration: none;
+      }
     }
   }
 
