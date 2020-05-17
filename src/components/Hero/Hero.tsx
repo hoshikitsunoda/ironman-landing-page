@@ -1,11 +1,11 @@
 import React from 'react'
-import Navigation from '../../components/Navigation/Navigation'
-import Popup from '../../components/Popup/Popup'
+import Navigation from '../Navigation/Navigation'
+import Popup from '../Popup/Popup'
 import ShowPopup from '../../hooks/showPopup'
 import { HeroDataProps } from '../../models/Props'
 
 import styled from 'styled-components'
-import * as Styled from '../../components/styled'
+import * as Styled from '../styled'
 
 import heroBackGround from '../../images/background.png'
 import ironManCartoon from '../../images/Iron-man-Cartoon.png'

@@ -1,15 +1,15 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
 
-import App from './App'
-import Hero from './components/Hero/Hero'
-import Copy from './components/Copy/Copy'
-import ComicSlider from './components/ComicSlider/ComicSlider'
+import MainPage from './MainPage'
+import Hero from '../../components/Hero/Hero'
+import Copy from '../../components/Copy/Copy'
+import ComicSlider from '../../components/ComicSlider/ComicSlider'
 
-import { characterObject, comicsObject } from './data/variables'
+import { characterObject, comicsObject } from '../../data/variables'
 
 import { ThemeProvider } from 'styled-components'
-import * as Styled from './components/styled'
+import * as Styled from '../../components/styled'
 
 jest.mock('axios')
 
@@ -21,12 +21,12 @@ const comicsDataStructure = {
   comicsData: comicsObject,
 }
 
-describe('<App />', () => {
+describe('<MainPage />', () => {
   let wrapper: ReactWrapper
   beforeEach(() => {
     wrapper = mount(
       <ThemeProvider theme={Styled.theme}>
-        <App />
+        <MainPage />
       </ThemeProvider>
     )
   })

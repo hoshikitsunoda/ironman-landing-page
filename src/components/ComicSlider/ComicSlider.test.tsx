@@ -4,7 +4,7 @@ import ComicSlider from './ComicSlider'
 import comicSliderObj from '../../__test__/mocks/comicSlider-mock.json'
 
 import { ThemeProvider } from 'styled-components'
-import * as Styled from '../../components/styled'
+import * as Styled from '../styled'
 
 describe('<ComicSlider />', () => {
   const { images, urls, title } = comicSliderObj.comicsData[0]
